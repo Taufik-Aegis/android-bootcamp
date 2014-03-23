@@ -36,24 +36,41 @@
             *   Preferences
     *   Third Session
         *   News Reader phase 1 [notes](notes/newsreader1.md)
-            *   [News Reader API [documentation](https://github.com/devacademy/newsreader)
+            *   News Reader API [documentation](https://github.com/devacademy/newsreader)
+            *   Login Activity
             *   HTTP POST Request
 
 * **Day 3** News Reader
     *   First Session
         *   News Reader phase 2 [notes](notes/newsreader2.md)
-            *   SQLite
+            *   News List Activity
+            *   SQLite [databasehelper](notes/databasehelper.md) [newsitem](notes/newsitem.md)
             *   ListView
-            *   Adapter
+            *   Array Adapter [newsarrayadapter](notes/newsarrayadapter.md) 
+    *   Second Session
+        *   News Reader phase 2 [notes](notes/newsreader2.md)
+            *   Cursor Adapter
+        *   News Reader phase 3 [notes](notes/newsreader3.md)
+            *   News Content Activity
+            *   ImageView
+            *   Share
+            *   Setting Activity
+    *   Third Session
+        * Google Play publish [notes](notes/publish.md)
 
-... (TBC)
+* **Day 4** Build your own App
+    *   Build simple app using all techniques covered in previous sessions
+    *   Example app
+        *   Twitter client
+        *   ...
+    *   Android competency test
             
 ## Materials
 
 * **pdf** - Presentation materials
 * **notes** - Hands on notes 
 
-**NOTE** Presentation are not separated based on days and session in Agenda but based on general topic
+**NOTE** Presentation are not separated based on days and session in Agenda but based on topic
 
 ## DevAcademy
 

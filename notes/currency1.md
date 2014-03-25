@@ -94,7 +94,7 @@ use ctrl+space for eclipse autocomplete
 
 * In `onCreate` function change layout id in function `setContentView(R.layout.activity_main);` to `setContentView(R.layout.NAME_OF_NEW_LAYOUT);`
 * Add onClick listener to both text view and the button
-* Add `HashMap` to store currency data. Why hash map? Remember Java collection.
+* Add `Array` to store currency data. Why Array?
 * Show dialog when text view clicked. We use `AlertDialog`. 
 
   ```

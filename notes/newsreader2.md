@@ -187,6 +187,6 @@
 * Task
   * What is problem with NewsArrayAdapter?
 
-### Cursor
+### Cursor Adapter
 
 

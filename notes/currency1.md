@@ -122,5 +122,19 @@ use ctrl+space for eclipse autocomplete
 
 * Task :
   * Handle onClick in Dialog
-  * We have `HashMap` of currencies. How we can show currency from `HashMap` into dialog?
+  * We have `Array` of currencies. How we can show currency from `Array` into dialog?
   * Process conversion and show the result.
+
+* Function to get rate from array of currencies
+  ```
+    private Double getCurrencyRate(String currencyStr) {
+      for(int i = 0; i < rates.length; i++) {
+        Currency currency = rates[i];
+        if (currency.getName().equals(currencyStr)) {
+          return currency.getRate();
+        }
+      }
+      
+      return 0.0;
+    }
+  ```

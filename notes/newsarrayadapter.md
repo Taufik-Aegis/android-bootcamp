@@ -27,7 +27,6 @@ public class NewsArrayAdapter extends ArrayAdapter<RssItem> {
     // Populate the data into the template view using the data object
     rowTitle.setText(news.title);
     rowDate.setText(news.date);
-    // TODO, set image
     
     // Return the completed view to render on screen
     return convertView;

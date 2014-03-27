@@ -4,16 +4,16 @@
 Add new class named `NewsArrayAdapter`
 
 ```
-public class NewsArrayAdapter extends ArrayAdapter<NewsItem> {
+public class NewsArrayAdapter extends ArrayAdapter<RssItem> {
 
-  public NewsArrayAdapter(Context context, ArrayList<NewsItem> users) {
+  public NewsArrayAdapter(Context context, ArrayList<RssItem> users) {
     super(context, R.layout.news_item, users);
   }
 
   @Override
   public View getView(int position, View convertView, ViewGroup parent) {
     // Get the data item for this position
-    NewsItem news = getItem(position);    
+    RssItem news = getItem(position);    
     
     // Check if an existing view is being reused, otherwise inflate the view
     if (convertView == null) {
@@ -21,9 +21,8 @@ public class NewsArrayAdapter extends ArrayAdapter<NewsItem> {
     }
     
     // Lookup view for data population
-    TextView rowTitle = (TextView) convertView.findViewById(R.id.row_newsTitle);
-    TextView rowDate = (TextView) convertView.findViewById(R.id.row_newsDate);
-    ImageView rowImage = (ImageView) convertView.findViewById(R.id.row_newsImage);
+    TextView rowTitle = (TextView) convertView.findViewById(R.id.itemTitle);
+    TextView rowDate = (TextView) convertView.findViewById(R.id.itemDate);
     
     // Populate the data into the template view using the data object
     rowTitle.setText(news.title);

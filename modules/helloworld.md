@@ -26,15 +26,15 @@ After we have ADT Bundle installed, we are ready to create our Android applicati
   * Set SD Card size to be 128. 
   * Then click **OK**
 
-<img src="https://i.cloudup.com/Y7av-bdZSG-3000x3000.png" alt="New AVD setting" style="width: 500px;"/>
+<img src="https://i.cloudup.com/Y7av-bdZSG-3000x3000.png" alt="New AVD setting" style="width: 300px;"/>
 
 * After AVD created, select the AVD in AVD Manager list, then click **Start** to start the AVD. If you are running on small monitor, you can choose to scale the display so you can see all the view.
 
 <img src="https://i.cloudup.com/0rVuB_4KLv-3000x3000.png" alt="New AVD setting" style="width: 500px;"/>
 
-* Launcing AVD might takes a while depending on your computer specification. You can close AVD Manager while waiting until it fully launced and start working on Android app.
+* Launcing AVD might takes a while depending on your computer specification. You can close AVD Manager while waiting until it fully launched and start working on Android app. When it finished, click `OK` for every guide that might pop up in Emulator screen.
 
-<img src="https://i.cloudup.com/yZGgFq7uMm-3000x3000.png" alt="Android emulator" style="width: 500px;"/>
+<img src="https://i.cloudup.com/yZGgFq7uMm-3000x3000.png" alt="Android emulator" style="width: 400px;"/>
 
 ## Create new Android Application
 

@@ -36,7 +36,7 @@ You should see in the `C:\adt-bundle` folder
 * eclipse/
 * sdk/
 
-![ADT Bundle](https://i.cloudup.com/YxOdy896PL-3000x3000.png)
+<img src="https://i.cloudup.com/YxOdy896PL-3000x3000.png" alt="ADT Bundle" style="width: 500px;"/>
 
 <br/>
 
@@ -58,7 +58,7 @@ Before you can run Eclipse with ADT plugins, you need to install Java SE JDK 6 o
 
 Make sure Java is available on the `PATH`. To test, open `cmd.exe` then type `java -version`. If all setup correctly you will see some lines like shown below.
 
-![Java -version](https://i.cloudup.com/_6YXO7D6qN-2000x2000.png)
+<img src="https://i.cloudup.com/_6YXO7D6qN-2000x2000.png" alt="Java -version" style="width: 500px;"/>
 
 To setup Java in `PATH`, see guidelines in notes below
 
@@ -73,16 +73,16 @@ These steps only applied for Windows OS. Other operating system should have thei
 
 * Open **Environment Variables** dialog by right-click on **Computer** then click menu **Properties**
 
-![Computer properties](https://i.cloudup.com/G8KQCcQ3xV-3000x3000.png)
+<img src="https://i.cloudup.com/G8KQCcQ3xV-3000x3000.png" alt="Computer properties" style="width: 500px;"/>
 
 * Click **Advanced system setting** then click **Environment Variables**.
 
-![Environment Variables](https://i.cloudup.com/QUTpVFvAkS-3000x3000.png)
+<img src="https://i.cloudup.com/QUTpVFvAkS-3000x3000.png" alt="Environment Variables" style="width: 500px;"/>
 
 * In **System Variables**, Scroll down until you find `Path`, click on the `Path`, a dialog will pop up.
 * In Variable value, add path to Java installation in your computer preceeded by `;`. For example in my computer I would add: `;C:\Program Files\Java\jdk1.7.0_51\bin`. 
 
-![Add Java to Path](https://i.cloudup.com/KFsvOihPEE-3000x3000.png)
+<img src="https://i.cloudup.com/KFsvOihPEE-3000x3000.png" alt="Add Java to Path" style="width: 500px;"/>
 
 * *NOTE* : Make sure you set correct path pointing to Java installation. Depending on your OS, 32 or 64 bit version, the path might be `C:\Program Files (x86)\Java` or `C:\Program Files\Java`.
 
@@ -91,19 +91,19 @@ These steps only applied for Windows OS. Other operating system should have thei
 
 When all is set. Start Eclipse from bly clicking `eclipse.exe` in `C:\adt-bundle\eclipse\eclipse.exe`. 
 
-![Eclipse](https://i.cloudup.com/WZZwAK7z7G-3000x3000.png)
+<img src="https://i.cloudup.com/WZZwAK7z7G-3000x3000.png" alt="Eclipse" style="width: 500px;"/>
 
 After Eclipse initialized, you will be asked to select a workspace. You can continue with default folder shown or browse new location for workspace in your harddrive. 
 
-![Workspace](https://i.cloudup.com/SDm3rK498f-3000x3000.png)
+<img src="https://i.cloudup.com/SDm3rK498f-3000x3000.png" alt="Workspace" style="width: 500px;"/>
 
 You will then see Contribute Usage Statistics dialog. Choose between `Yes` or `No`. You will see Android IDE Welcome screen. 
 
-![Welcome](https://i.cloudup.com/K1RdENQiVA-3000x3000.png)
+<img src="https://i.cloudup.com/K1RdENQiVA-3000x3000.png" alt="Welcome" style="width: 500px;"/>
 
 Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclipse main workspace will be displayed.
 
-![Eclipse default view](https://i.cloudup.com/zoQ8CVPcKE-3000x3000.png)
+<img src="https://i.cloudup.com/K1RdENQiVA-3000x3000.png" alt="Eclipse default view" style="width: 500px;"/>
 
 <br/>
 ### Troubleshooting
@@ -117,18 +117,30 @@ Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclip
   -vm
   C:\Program Files\Java\jdk\bin\javaw.exe
 ```
-below the lines
-```
-  -showsplash
-  com.eclipse.platform
-```
-so it becomes
+below the lines for `-showsplash` setting so it becomes
 
 ```
-  ...
+  -startup
+  plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
+  --launcher.library
+  plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.1.200.v20120913-144807
+  -product
+  com.android.ide.eclipse.adt.package.product
+  --launcher.XXMaxPermSize
+  256M
   -showsplash
-  com.eclipse.platform
+  com.android.ide.eclipse.adt.package.product
   -vm
-  C:\Program Files\Java\jdk\bin\javaw.exe
-  ...
+  C:\Program Files\Java\jdk1.7.0_51\bin\javaw.exe
+  --launcher.XXMaxPermSize
+  256m
+  --launcher.defaultAction
+  openFile
+  -vmargs
+  -Dosgi.requiredJavaVersion=1.6
+  -Xms40m
+  -Xmx768m
+  -Declipse.buildId=v22.3.0-887826
+  -XX:MaxPermSize=512M
 ```
+

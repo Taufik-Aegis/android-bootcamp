@@ -14,7 +14,7 @@
 Before we can start developing apps for Android, we need to install Android SDK (Software Development Kit) available in [Android developer website](http://developer.android.com/sdk/index.html). The Android SDK provides the API libraries and developer tools necessary to build, test, and debug apps for Android.
 
 <br/>
-### Android Developer Tools (ADT Bundle)
+## Android Developer Tools (ADT Bundle)
 
 Download ADT Bundle which include Eclipse IDE (Integrated Development Environment) and ADT plugins from [here](http://developer.android.com/sdk/index.html). ADT bundle includes :
 
@@ -52,7 +52,7 @@ In this notes, we will use Windows as reference. However, there should be not mu
 * In Mac OS and Linux : `/FOLDER/adt-bundle`
 
 <br/>
-### Installing prerequisites
+## Installing prerequisites
 
 Before you can run Eclipse with ADT plugins, you need to install Java SE JDK 6 or 7 available [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 
@@ -87,7 +87,7 @@ These steps only applied for Windows OS. Other operating system should have thei
 * *NOTE* : Make sure you set correct path pointing to Java installation. Depending on your OS, 32 or 64 bit version, the path might be `C:\Program Files (x86)\Java` or `C:\Program Files\Java`.
 
 <br/>
-### Opening Eclipse
+## Opening Eclipse
 
 When all is set. Start Eclipse from bly clicking `eclipse.exe` in `C:\adt-bundle\eclipse\eclipse.exe`. 
 
@@ -103,10 +103,10 @@ You will then see Contribute Usage Statistics dialog. Choose between `Yes` or `N
 
 Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclipse main workspace will be displayed.
 
-<img src="https://i.cloudup.com/K1RdENQiVA-3000x3000.png" alt="Eclipse default view" style="width: 500px;"/>
+<img src="https://i.cloudup.com/zoQ8CVPcKE-3000x3000.png" alt="Eclipse default view" style="width: 500px;"/>
 
 <br/>
-### Troubleshooting
+## Troubleshooting
 
 * Error message : `A Java Runtime Environment (JRE) or Java Development Kit (JDK) must be available ...`. This is because Java is not available in `Path`. Follow steps outlined before on how to setup Java on Windows `Path`.
 * Error message : `Failed to load the JNI shared library ...`. The following can cause this error. 
@@ -115,7 +115,7 @@ Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclip
 
 ```
   -vm
-  C:\Program Files\Java\jdk\bin\javaw.exe
+  C:\Program Files\Java\jdk1.7.0_51\bin\javaw.exe
 ```
 below the lines for `-showsplash` setting so it becomes
 

@@ -81,7 +81,7 @@ As shown in previous image, there are many panels in Eclipse. Those panels are k
 
 Now that we have our App Project and Emulator ready, we can compile and launch our App to the Emulator. To launch the app, right-click on your Project, click **Run As** then click **Android Application**.
 
-<img src="https://i.cloudup.com/Tw_fBFqfL-3000x3000.png" alt="Run As Android App" style="width: 500px;"/>
+<img src="https://i.cloudup.com/Tw_fBFqfL--3000x3000.png" alt="Run As Android App" style="width: 500px;"/>
 
 Wait until launcing process finished and you will see your app in the emulator.
 

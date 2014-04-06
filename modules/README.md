@@ -12,4 +12,5 @@ For printing purposes, we use [gitprint](https://gitprint.com). To make it even 
 * **Introduction** [[view](introduction.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/introduction.md" target="_blank">print</a>]
 * **Installation** [[view](installation.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/installation.md" target="_blank">print</a>]
 * **Hello World** [[view](helloworld.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/helloworld.md" target="_blank">print</a>]
+* **Stack** [[view](stack.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/stack.md" target="_blank">print</a>]
 

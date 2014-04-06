@@ -9,8 +9,8 @@
 <br/>
 <br/>
 
-# Introduction
+# Android Stack
 
-This chapter will give quick overview on Android and its ecosystem. 
+
 
 ## TODO

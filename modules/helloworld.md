@@ -11,7 +11,7 @@
 
 # Hello World
 
-After we have ADT Bundle installed, we are ready to create our Android application. First, we will setup Android Emulator also known as Android Virtual Device (AVD). 
+After we have ADT Bundle installed, we are ready to create our Android application. First, we will setup Android Emulator also known as Android Virtual Device (AVD), then create New Android app and run it in Emulator.
 
 ## Adding new AVD
 
@@ -30,7 +30,7 @@ After we have ADT Bundle installed, we are ready to create our Android applicati
 
 * After AVD created, select the AVD in AVD Manager list, then click **Start** to start the AVD. If you are running on small monitor, you can choose to scale the display so you can see all the view.
 
-<img src="https://i.cloudup.com/0rVuB_4KLv-3000x3000.png" alt="New AVD setting" style="width: 500px;"/>
+<img src="https://i.cloudup.com/0rVuB_4KLv-3000x3000.png" alt="Launch AVD" style="width: 500px;"/>
 
 * Launcing AVD might takes a while depending on your computer specification. You can close AVD Manager while waiting until it fully launched and start working on Android app. When it finished, click `OK` for every guide that might pop up in Emulator screen.
 
@@ -38,3 +38,41 @@ After we have ADT Bundle installed, we are ready to create our Android applicati
 
 ## Create new Android Application
 
+* In Eclipse menu, click **File** then click **New** then click **Android Application Project** 
+
+<img src="https://i.cloudup.com/cNLIx-10xM-3000x3000.png" alt="New project" style="width: 500px;"/>
+
+* Eclipse will show Android Application Project Wizard. This wizard will help you setup your Android app project. Fill Application Name, Eclipse will auto fill other fields. 
+  * You are strongly suggested to change Package name. Package name typically reversed company domain name + application name. Typically in format : `com.YOURCOMPANYNAME.YOURAPPLICATIONNAME`. Package name must be unique as its used to identify one app from another in Android system. 
+
+<img src="https://i.cloudup.com/pbT1Jf3fnZ-3000x3000.png" alt="Project wizard" style="width: 500px;"/>
+
+* Click next, use default for app steps until then finally, click Finish. You will see your project is created and Eclipse wil show `MainActivity.java` content.
+
+<img src="https://i.cloudup.com/9bvpXrEsq1-3000x3000.png" alt="Eclipse project view" style="width: 500px;"/>
+
+## Eclipse Project Views
+
+As shown in previous image, there are many panels in Eclipse. Those panels are known as `View`. The default views are annotated and explained below.
+
+<img src="https://i.cloudup.com/O0beC_expK-3000x3000.png" alt="Eclipse project view annotated" style="width: 500px;"/>
+
+1. **Package Explorer**. Show project package files. We will explore this later.
+1. **Code View**. This is the main view where you will code and edit .java, layout (.xml or graphical mode) and other files.
+1. **Outline**. Outline shows tree representation of code or other files shown in main view.
+1. **Bottom Panel**. Contains several views. We will add two other views in here.
+
+### Add new view in Eclipse
+
+* In Eclipse menu, click **Window** then click **Show View** the click **Other**.
+
+<img src="https://i.cloudup.com/TQrDtm4mHl-3000x3000.png" alt="Eclipse project view annotated" style="width: 500px;"/>
+
+* In Android section, double click **Devices** to add it to bottom panel. Then add **LogCat** using the same approach. 
+
+<img src="https://i.cloudup.com/lyJn319Rvx-3000x3000.png" alt="Add view" style="width: 500px;"/>
+
+  * In **Devices** view, you can see all devices connected to ADT. If you followed this tutorial, you will see Emulator that we created and launched before. If you have Android smartphones and tablets and have necessary driver installed, you will see your devices here.
+  * **LogCat** provide view for application logging. During Android application development, we will use **LogCat** to view errors and logs in our app.
+
+## Launch Application on Emulator

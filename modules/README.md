@@ -9,8 +9,8 @@ For printing purposes, we use [gitprint](https://gitprint.com). To make it even 
 
 * **Cover** [[view](cover.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/cover.md" target="_blank">print</a>]
 * **Preface** [[view](preface.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/preface.md" target="_blank">print</a>]
-* **Introduction** [[view](introduction.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/introduction.md" target="_blank">print</a>]
+* **Android Overview** [[view](overview.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/overview.md" target="_blank">print</a>]
 * **Installation** [[view](installation.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/installation.md" target="_blank">print</a>]
 * **Hello World** [[view](helloworld.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/helloworld.md" target="_blank">print</a>]
-* **Stack** [[view](stack.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/stack.md" target="_blank">print</a>]
+* **Android Stack** [[view](stack.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/stack.md" target="_blank">print</a>]
 

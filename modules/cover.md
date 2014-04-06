@@ -1,4 +1,9 @@
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### DevAcademy Bootcamp Notes Series
 
@@ -11,8 +16,15 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-Prepared by Nurul Arif Setiawan <arif@aegis.co.id>
+Prepared by <br/>
+Nurul Arif Setiawan <br/>
+<arif@aegis.co.id>
 
 <br/>
 <br/>

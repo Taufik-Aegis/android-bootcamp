@@ -7,5 +7,5 @@ For printing purposes, we use [gitprint](https://gitprint.com). To make it even 
 
 ## Modules
 
-* **Cover** [view](cover.md) <a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/cover.md" target="_blank">print</a>
+* **Cover** [[view](cover.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/cover.md" target="_blank">print</a>]
 * 

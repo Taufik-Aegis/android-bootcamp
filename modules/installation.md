@@ -23,6 +23,8 @@ Download ADT Bundle which include Eclipse IDE (Integrated Development Environmen
 * The latest Android platform
 * The latest Android system image for the emulator
 
+![Download ADT Bundle](https://i.cloudup.com/4g_jqNX328-3000x3000.png)
+
 The choice between 32 bit and 64 bit is depend on your computer processor. However, it is easier to proceed by downloading 32 bit version for either Windows 32 bit or 64 bit.
 
 After downloading ADT, extract the zip file in your computer (for example, if using Windows to drive `C:\` then optionally rename the folder to `adt-bundle` - thus become `C:\adt-bundle`).
@@ -30,6 +32,8 @@ After downloading ADT, extract the zip file in your computer (for example, if us
 You should see in the `C:\adt-bundle` folder 
 * eclipse/
 * sdk/
+
+![ADT Bundle](https://i.cloudup.com/YxOdy896PL-3000x3000.png)
 
 #### Note on ADT Bundle location
 
@@ -62,18 +66,33 @@ To setup Java in `PATH`, see guidelines in notes below
 These steps only applied for Windows OS. Other operating system should have their own method. Please check yourself for tutorial on internet for setup `Path` in another OS.
 
 * Open Environment Variables dialog by right-click on Computer then click menu Properties
+
+![Computer properties](https://i.cloudup.com/G8KQCcQ3xV-3000x3000.png)
+
 * Click Advanced system setting then click Environment Variables.
+
+![Environment Variables](https://i.cloudup.com/QUTpVFvAkS-3000x3000.png)
+
 * In System Variables, Scroll down until you find `Path`, click on the `Path`, a dialog will pop up.
 * In Variable value, add the following: `;C:\Program Files\Java\jdk1.7.0_51\bin`. 
+
+![Add Java to Path](https://i.cloudup.com/KFsvOihPEE-3000x3000.png)
+
 * *NOTE* : Make sure you set correct path pointing to Java installation. Depending on your OS, 32 or 64 bit version, the path might be `C:\Program Files (x86)\Java` or `C:\Program Files\Java`.
 
 ### Opening Eclipse
 
 When all is set. Start Eclipse from bly clicking `eclipse.exe` in `C:\adt-bundle\eclipse\eclipse.exe`. After Eclipse initialized, you will be asked to select a workspace. You can continue with default folder shown or browse new location for workspace in your harddrive. 
 
-You will then see Contribute Usage Statistics dialog. Choose between `Yes` or `No`
+![Workspace](https://i.cloudup.com/SDm3rK498f-3000x3000.png)
 
-You will see Android IDE Welcome screen. Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclipse main workspace will be displayed.
+You will then see Contribute Usage Statistics dialog. Choose between `Yes` or `No`. You will see Android IDE Welcome screen. 
+
+![Workspace](https://i.cloudup.com/K1RdENQiVA-3000x3000.png)
+
+Close the Welcome screen by clicking `x` button in Android IDE tab and the Eclipse main workspace will be displayed.
+
+![Workspace](https://i.cloudup.com/zoQ8CVPcKE-3000x3000.png)
 
 ### Troubleshooting
 

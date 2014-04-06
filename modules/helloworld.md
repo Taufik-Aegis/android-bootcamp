@@ -59,7 +59,7 @@ As shown in previous image, there are many panels in Eclipse. Those panels are k
 
 1. **Package Explorer**. Show project package files. We will explore this later.
 1. **Code View**. This is the main view where you will code and edit .java, layout (.xml or graphical mode) and other files.
-1. **Outline**. Outline shows tree representation of code or other files shown in main view.
+1. **Outline**. Outline shows tree representation of code or other files shown in main view. This will help us in navigating the code when it gets too long.
 1. **Bottom Panel**. Contains several views. We will add two other views in here.
 
 ### Add new view in Eclipse
@@ -72,7 +72,17 @@ As shown in previous image, there are many panels in Eclipse. Those panels are k
 
 <img src="https://i.cloudup.com/lyJn319Rvx-3000x3000.png" alt="Add view" style="width: 500px;"/>
 
-  * In **Devices** view, you can see all devices connected to ADT. If you followed this tutorial, you will see Emulator that we created and launched before. If you have Android smartphones and tablets and have necessary driver installed, you will see your devices here.
-  * **LogCat** provide view for application logging. During Android application development, we will use **LogCat** to view errors and logs in our app.
+* In **Devices** view, you can see all devices connected to ADT. If you followed this tutorial, you will see Emulator that we created and launched before. If you have Android smartphones and tablets and have necessary driver installed, you will see your devices here.
+* **LogCat** provide view for application logging. During Android application development, we will use **LogCat** to view errors and logs in our app.
+
+<img src="https://i.cloudup.com/wI0q_wRFi2-3000x3000.png" alt="Add view" style="width: 500px;"/>
 
 ## Launch Application on Emulator
+
+Now that we have our App Project and Emulator ready, we can compile and launch our App to the Emulator. To launch the app, right-click on your Project, click **Run As** then click **Android Application**.
+
+<img src="https://i.cloudup.com/Tw_fBFqfL-3000x3000.png" alt="Run As Android App" style="width: 500px;"/>
+
+Wait until launcing process finished and you will see your app in the emulator.
+
+<img src="https://i.cloudup.com/v3i6c0axQu-3000x3000.png" alt="Android emulator" style="width: 400px;"/>

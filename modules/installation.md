@@ -24,9 +24,7 @@ Download ADT Bundle which include Eclipse IDE (Integrated Development Environmen
 * The latest Android platform
 * The latest Android system image for the emulator
 
-<div style="text-align: center;">
-<img src="https://i.cloudup.com/4g_jqNX328-3000x3000.png" alt="Download ADT Bundle" style="width: 400px;" align="middle"/>
-</div>
+<img src="https://i.cloudup.com/4g_jqNX328-3000x3000.png" alt="Download ADT Bundle" style="width: 500px;"/>
 
 <br/>
 

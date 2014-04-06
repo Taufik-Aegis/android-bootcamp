@@ -86,3 +86,5 @@ Now that we have our App Project and Emulator ready, we can compile and launch o
 Wait until launcing process finished and you will see your app in the emulator.
 
 <img src="https://i.cloudup.com/v3i6c0axQu-3000x3000.png" alt="Android emulator" style="width: 400px;"/>
+
+Congratulations, you have created and run your first Android app!

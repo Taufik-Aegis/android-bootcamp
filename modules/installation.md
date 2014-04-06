@@ -86,6 +86,13 @@ These steps only applied for Windows OS. Other operating system should have thei
 
 * *NOTE* : Make sure you set correct path pointing to Java installation. Depending on your OS, 32 or 64 bit version, the path might be `C:\Program Files (x86)\Java` or `C:\Program Files\Java`.
 
+## Add Android Tools in Path
+
+Some of ADT components can be executed from command line. One of that tools is `adb` with stand for Android Debug bridge. To use these tools from command line, add two folder below to OS `Path` using previously explained steps.
+
+* `C:\adt-bundle\sdk\platform-tools`
+* `C:\adt-bundle\sdk\tools`
+
 <br/>
 ## Opening Eclipse
 

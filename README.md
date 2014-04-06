@@ -1,9 +1,9 @@
 
 # Android Bootcamp
 
-## New !!
+## Modules
 
-Printed modules added. This contain combined materials from **pdf** and **notes** for printing purposes.
+New materials available in [modules](modules). This contain combined materials from **pdf** and **notes** for printing purposes.
 
 ## Agenda
 

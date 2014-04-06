@@ -8,6 +8,7 @@ For printing purposes, we use [gitprint](https://gitprint.com). To make it even 
 ## Modules
 
 * **Cover** [[view](cover.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/cover.md" target="_blank">print</a>]
+* **Content** [[view](content.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/content.md" target="_blank">print</a>]
 * **Preface** [[view](preface.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/preface.md" target="_blank">print</a>]
 * **Android Overview** [[view](overview.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/overview.md" target="_blank">print</a>]
 * **Installation** [[view](installation.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/installation.md" target="_blank">print</a>]

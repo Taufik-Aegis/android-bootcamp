@@ -1,7 +1,9 @@
 
-# NOTE. This draft is working progress
-
 # Android Bootcamp
+
+## New !!
+
+Printed modules added. This contain combined materials from **pdf** and **notes** for printing purposes.
 
 ## Agenda
 
@@ -30,7 +32,7 @@
             *   Networking in Android
             *   HTTP GET request
     *   Second Session
-        *   Currency Converter version 3 contd [notes](notes/currency2.md)
+        *   Currency Converter version 3 continued [notes](notes/currency2.md)
             *   Thread
             *   JSON
             *   Preferences
@@ -63,19 +65,17 @@
     *   Example app
         *   Twitter client
         *   ...
-    *   Android competency test
             
 ## Materials
 
 * **pdf** - Presentation materials
-* **notes** - Hands on notes 
+* **notes** - Hands on notes - for online consumption
+* **modules** - For printing purposed bootcamp notes
 
-**NOTE** Presentation are not separated based on days and session in Agenda but based on topic
+**NOTE** Presentation are not separated based on days and session in Agenda but based on topic.
 
 ## DevAcademy
 
 This bootcamp materials are prepared by [DevAcademy](http://devacademy.co.id) team
 
 * Nurul Arif Setiawan <arif@aegis.co.id>
-* Gusnul Yakin <gusnul@aegis.co.id>
-* Rianov Purnama Osa <rianov@aegis.co.id>

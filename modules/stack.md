@@ -90,7 +90,7 @@ If you look into **Package Explorer** view above, you will see several items wit
 
 When developing Android application, most of the time we will spend in resource **res/** folder and Java **src/** folder. It is important to understand relation between files and other data in **res/** to **R.java** to your Java file. The process is illustrated below.
 
-<img src="https://i.cloudup.com/-p-NhOtoPY-1200x1200.jpeg" alt="Resource process" style="width: 500px;"/>
+<img src="https://i.cloudup.com/-p-NhOtoPY-3000x3000.png" alt="Resource process" style="width: 500px;"/>
 
 1. When you compile your app, Android SDK (aapt) will generate resource ID to **R.java** file. The hexadecimal number you see (for example: 0x7f030000) is pointer to location of resource file in compiled Android resource.
 1. When you want to use the resource, you access the resource using ID from **R.java**. 
@@ -102,7 +102,7 @@ Because Android SDK generate **R.java** file during compilation, when you have e
 * Fix the error, or comment the part which cause errors in your Java code.
 * In Eclipse menu, click **Project** then click **Clean...**. Then click **OK** to clean your project
 
-<img src="https://i.cloudup.com/cHUZLT1RvZ-1200x1200.jpeg" alt="Clean" style="width: 500px;"/>
+<img src="https://i.cloudup.com/cHUZLT1RvZ-3000x3000.png" alt="Clean" style="width: 500px;"/>
 
 If you notice in menu above, you see **Build Automatically** is checked. When you clean the project, Eclipse will automatically re-compile the project and **R.java** file. 
 

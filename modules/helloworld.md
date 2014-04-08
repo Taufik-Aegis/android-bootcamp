@@ -111,5 +111,5 @@ You can see details on Android version history [here](http://en.wikipedia.org/wi
 
 * You will see which SDK version you have installed. If you want to install another SDK version, click of the root of the SDK, check SDK platform then click install. You can also install Google APIs, Samples and Android system image (ARM or Intel version).
 
-<img src="https://i.cloudup.com/jB9p2YaDgu-3000x3000.png" alt="Start AVD Manager" style="width: 500px;"/>
+<img src="https://i.cloudup.com/NTk07T9NK8-3000x3000.png" alt="Start AVD Manager" style="width: 500px;"/>
 

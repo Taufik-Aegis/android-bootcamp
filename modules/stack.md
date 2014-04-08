@@ -11,7 +11,7 @@
 
 # Android Stack
 
-We have created Android app project and runs it to the emulator. Before we start working on our app, first, we will explore Android stack, Android Project components and some Android development concepts that we will use throughout this bootcamp. 
+We have created Android app project and runs it to the emulator. Before we start working on our app, first, we will explore Android stack, Android project structure and some of Android concepts that we will use during this bootcamp. 
 
 ## Android Architecture
 
@@ -51,10 +51,28 @@ Dalvik is based on JIT (just in time) compilation. It means that each time you r
 
 #### New Android Runtime
 
-As a part of Android 4.4 KitKat, Google introduced a new way of executing apps on top of the Android OS. Then new runtime, named **ART (Android Runtime)**, compiles the Dalvik bytecode, into a system-dependent binary. The whole code of the app will be pre-compiled during install, called AOT (Ahead of Time) compilation. ART will generally make app execute mush faster. ART, however, increase the binary size of the app and takes longer to install because of compilation process.
+As a part of Android 4.4 KitKat, Google introduced a new way of executing apps on top of the Android OS. Then new runtime, named **ART (Android Runtime)**, compiles the Dalvik bytecode, into a system-dependent binary. The whole code of the app will be pre-compiled during install, called AOT (Ahead of Time) compilation. ART will generally make app execute mush faster. ART, however, increase the binary size of the app and takes a bit longer to install because of compilation process.
 
 Currently ART status is still ongoing project and experimental. In KitKat, You can choose to use ART by going to **Settings > Developer Options > Select Runtime** and choosing ART.
 
-<img src="https://i.cloudup.com/sPoF_3v_xK-3000x3000.png" alt="Download ADT Bundle" style="width: 300px;"/>
+<img src="https://i.cloudup.com/NISlw1PONj-3000x3000.png" alt="Download ADT Bundle" style="width: 250px;"/>
 
-## TODO
+### 3. Application Frameworks
+
+The application framewoks consists of numerous Java libraries specifically built for Android. This is the most important and the most extensively covered part of the Android platform because this is the layer that provide capabilities for app development such as location, WiFi, contacts, notification, messaging, telephony and so on. 
+
+During this bootcamp, you will learn several Android frameworks used in Android app development. For more documentation on all of Android frameworks, you can check [Android developer website](http://developer.android.com/guide/index.html)
+
+### 4. Applications
+
+At the top layer of Android stack is Applications or **apps**. these are the apps that you and other developers create. These apps are what end users find valuable about Android. They can come preinstalled on the device or can be downloaded from one of the many Android markets.
+
+## Android Project Structure
+
+Now that you know where is your app is located inside Android platform, we will take a look into our Android app project. You will learn some of the components that make one Android app. 
+
+<img src="https://i.cloudup.com/A4_F2WKSay-3000x3000.png" alt="Download ADT Bundle" style="width: 500px;"/>
+
+If you look into **Package Explorer** view above, you will see several items with folder-like icon. ADT organized Andriod project into several folders each with different purpose. 
+
+* **src** location of the java code. If you want to add new code or adding existing code (from your other project or other open source code) to your project, you can drag the code here, or copy to your src folder in Windows Explorer.

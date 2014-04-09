@@ -26,7 +26,9 @@ We will describe each of the components above, and also discuss about **Intent**
 
 ## 1. Activity
 
-An activity represents a single screen with a user interface where user can interact in order to do something. For example, an email app might have one activity that shows a list of new emails, another activity to compose an email, and another activity for reading emails. Although the activities work together to form a cohesive user experience in the email app, each one is independent of the others. As such, a different app can start any one of these activities (if the email app allows it). For example, a camera app can start the activity in the email app that composes new mail, in order for the user to share a picture. As such, activities are the most visible part of your application.
+An activity represents a single screen with a user interface where user can interact in order to do something. For example, an message app might have one activity that shows a list of your conversation and another activity to compose and send new message. Although the activities work together to form a cohesive user experience in the contact app, each one is independent of the others. As such, a different app can start any one of these activities (if the message app allows it). For example, a contact app can start the activity in the message app that composes new message, in order for the user to send a message to the specified contact. 
+
+<img src="https://i.cloudup.com/WFQ2jZcLM4-3000x3000.png" alt="Eclipse project view annotated" style="width: 500px;"/>
 
 We can use a website as an analogy for activities. Just like a website consists of multiple pages, so does an Android application consist of multiple activities.
 
@@ -87,7 +89,72 @@ We create Activity subclass `MainActivity` which extends `Activity`. We also alr
 
 The most common way to define a layout using views is with an XML layout file saved in your application resources. This way, you can maintain the design of your user interface separately from the source code that defines the activity's behavior. Note that you also can create layout using Java code, but we will not discuss this because it is not common approach. 
 
-When your app get executed (when user launch the app) all the XML is actually **inflated** into Java memory space as if you actually wrote Java code. So, it’s only Java code that runs. **Inflating** is a process that convert XML layout into Java layout. 
+When your app get executed (when user launch the app) all the XML is actually **inflated** into Java memory space as if you actually wrote Java code. So, it’s only Java code that runs. **Inflating** is a process that convert XML layout into Java code layout. 
 
 ### Activity Lifecycle
+
+Activity in Android is managed by **Activity Manager**. Activity Manager is responsible for creating, destroying, and managing activities. For example, when the user starts an application for the first time, the Activity Manager will create its activity and put it onto the screen. Later, when the user switches screens, the Activity Manager will move that previous activity to a holding place. This way, if the user wants to go back to an older activity, it can be started more quickly. Older activities that the user hasn’t used in a while will be destroyed in order to free more space for the currently active one. This mechanism is designed to help improve the speed of the user interface and thus improve the overall user experience.  
+
+An activity can exist in essentially three states:
+
+* **Resumed**. The activity is in the foreground of the screen and has user focus. (This state is also sometimes referred to as "running".)
+* **Paused**. Another activity is visible on top of this one and that activity is partially transparent or doesn't cover the entire screen. This usually in transition stage between two activities or when dialog boxes that come up in front of an activity.
+* **Stopped**. The activity is completely obscured by another activity (the activity is now in the "background"). It is no longer visible to the user and it can be killed by the system when memory is needed elsewhere.
+
+When an activity transitions into and out of the different states described above, it is notified through various callback methods. All of the callback methods are hooks that you can override to do appropriate work when the state of your activity changes. 
+
+<img src="http://developer.android.com/images/training/basics/basic-lifecycle.png" alt="Eclipse project view annotated" style="width: 500px;"/>
+
+Currently we only implemented `onCreate()` callback. `onCreate()` callback is mandatory. You, as developer is recommended to implement another callback so the app respond appropriately to state changes. Below is skeleton code that implements all Activity callback.
+
+```
+public class ExampleActivity extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // The activity is being created.
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // The activity is about to become visible.
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // The activity has become visible (it is now "resumed").
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Another activity is taking focus (this activity is about to be "paused").
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // The activity is no longer visible (it is now "stopped")
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // The activity is about to be destroyed.
+    }
+}
+```
+
+Example cases for implementing Activity callback are: 
+* Write to the database during `onPause()` when the first activity stops so that the following activity can read it.
+* Stop playing music when app is going to background because another app is launched.
+* Save the activity state `onPause()` so we can restore it in case the app is force closed by user or destroyed by system in order to recover memory.
+
+## 2. Services
+
+
+## 3. Content providers
+
+
+## 4. Broadcast receivers
+
+
+## Intent
 

@@ -230,4 +230,17 @@ public class MainActivity extends Activity {
 }
 ```
 
+## Application Package (APK)
 
+In android, an app is distributed as file APK (Application Package) with extension **.apk**. APK files are a type of archive file specifically in zip format. You can use any software that can process zip file to see APK file content.
+
+<img src="https://i.cloudup.com/zgmPCO-bSk-3000x3000.png" alt="Clean" style="width: 500px;"/>
+
+An APK file is an archive that usually contains the following files/directories:
+
+* **Dalvik executable**. This is all your Java source code compiled down to a Dalvik executable. This is the
+code that runs your application.
+* **Resources**. Resources are everything that is not code. Your application may contain a number of images and audio/video clips, as well as numerous XML files describing layouts, language packs, and so on. 
+* **Native libraries**. Optionally, your application may include some native code, such as C/C++ li- braries. These libraries could be packaged together with your APK file.
+* **AndroidManifest.xml**. You app manifest file
+* **META-INF**. Which contain certificate of the application.

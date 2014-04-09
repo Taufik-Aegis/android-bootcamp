@@ -16,6 +16,7 @@
 ### Installation
 ### Hello World
 ### Android Stack
-### Android Project
-### Android App Component
+### Project
+### App Component
+### App - Currency - Phase 1
 

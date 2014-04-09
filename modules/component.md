@@ -24,6 +24,8 @@ In Android project, app components in one app are listed in **AndroidManifest.xm
 
 We will describe each of the components above, and also discuss about **Intent** which is a messaging object you can use to request an action from another app component. 
 
+Throughout this bootcamp, we will use Activities and Intents in our app. Services, Content providers and Broadcast receivers are provided in advanced courses.
+
 ## 1. Activity
 
 An activity represents a single screen with a user interface where user can interact in order to do something. For example, an message app might have one activity that shows a list of your conversation and another activity to compose and send new message. Although the activities work together to form a cohesive user experience in the contact app, each one is independent of the others. As such, a different app can start any one of these activities (if the message app allows it). For example, a contact app can start the activity in the message app that composes new message, in order for the user to send a message to the specified contact. 
@@ -83,13 +85,13 @@ public class MainActivity extends Activity {
 }
 ```
 
-We create Activity subclass `MainActivity` which extends `Activity`. We also already implemented `onCreate()` method contains `setContentView()` method and passed `activity_main.xml` resource ID. This means, current `MainActivity` will display view as defined in `activity_main.xml`.
+We create Activity subclass `MainActivity` which extends `Activity`. We also already implemented `onCreate()` method containing `setContentView()` method and passed `activity_main.xml` resource ID. This means, current `MainActivity` will display view as defined in `activity_main.xml`.
 
-### XML Layout for Activity
+### Inflating XML Layout
 
 The most common way to define a layout using views is with an XML layout file saved in your application resources. This way, you can maintain the design of your user interface separately from the source code that defines the activity's behavior. Note that you also can create layout using Java code, but we will not discuss this because it is not common approach. 
 
-When your app get executed (when user launch the app) all the XML is actually **inflated** into Java memory space as if you actually wrote Java code. So, it’s only Java code that runs. **Inflating** is a process that convert XML layout into Java code layout. 
+When your app get executed (when user launch the app) all the XML is actually **inflated** into Java memory space as if you actually wrote Java code. So, it’s only Java code that runs. **Inflating** is a process when XML layout resource is parsed and converted into a hierarchy of View objects in Java.
 
 ### Activity Lifecycle
 
@@ -149,12 +151,24 @@ Example cases for implementing Activity callback are:
 
 ## 2. Services
 
+A service is a component that runs in the background to perform long-running operations or to perform work for remote processes. A service does not provide a user interface. For example, a service might play music in the background while the user is in a different app, or it might fetch data over the network without blocking user interaction with an activity. Another component, such as an activity, can start the service and let it run or bind to it in order to interact with it.
 
 ## 3. Content providers
 
+A content provider manages a shared set of app data. You can store the data in the file system, an SQLite database, on the web, or any other persistent storage location your app can access. Through the content provider, other apps can query or even modify the data (if the content provider allows it). For example, the Android system provides a content provider that manages the user's contact information. As such, any app with the proper permissions can query part of the content provider (to get contact data) to read and write information about a particular person.
+
+Content providers are also useful for reading and writing data that is private to your app and not shared. 
 
 ## 4. Broadcast receivers
 
+A broadcast receiver is a component that responds to system-wide broadcast announcements. Many broadcasts originate from the system—for example, a broadcast announcing that the screen has turned off, the battery is low, or a picture was captured. Apps can also initiate broadcasts—for example, to let other apps know that some data has been downloaded to the device and is available for them to use. 
 
 ## Intent
+
+An Intent is a messaging object you can use to request an action from another app component. They trigger an activity to start up, tell a service to start or stop, or sending broadcasts. Intents are asynchronous, meaning the code that sends them doesn’t have to wait for them to be completed.
+
+There are two types of intents:
+
+* Explicit intents specify the component to start by name (the fully-qualified class name). You'll typically use an explicit intent to start a component in your own app, because you know the class name of the activity or service you want to start. For example, start a new activity in response to a user action or start a service to download a file in the background.
+* Implicit intents do not name a specific component, but instead declare a general action to perform, which allows a component from another app to handle it. For example, if you want to show the user a location on a map, you can use an implicit intent to request that another capable app show a specified location on a map
 

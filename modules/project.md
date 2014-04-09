@@ -86,7 +86,7 @@ There is no rule on how the data arranged in tag or attribute. It depends on who
 **2. Viewing Resource in XML**
 <br/>
 
-When you open AndroidManifest.xml, you will not see XML file directly. Eclipse will show view which represent the XML contents so its easy to edit. If you want to see the XML content, you can switch the view, by clicking AndroidManifest.XML tab at the bottom. This also applied to any other XML files in the project. Here, I will show you only the XML code as shown previously.
+When you open AndroidManifest.xml, you will not see XML file directly. Eclipse will show Graphical or wizard like view which represent the XML contents so its easy to edit. If you want to see the XML content, you can switch the view, by clicking AndroidManifest.XML tab at the bottom. This also applied to any other XML files in the project. Here, I will show you only the XML code as shown previously.
 
 <img src="https://i.cloudup.com/YrbdwcGktk-3000x3000.png" alt="Android project structure" style="width: 500px;"/>
 

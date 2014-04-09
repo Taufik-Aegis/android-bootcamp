@@ -39,7 +39,15 @@ Android provides a collection of both `View` and `ViewGroup` subclasses that off
 
 The user interface for each component of your app is defined using a hierarchy of `View` and `ViewGroup` objects. Each view group is an invisible container that organizes child views, while the child views may be input controls or other widgets that draw some part of the UI. This hierarchy tree can be as simple or complex as you need it to be (but simplicity is best for performance).
 
+From now on, we will refer each of the UI component: button, text view and others as `View`.
+
 <img src="https://developer.android.com/images/viewgroup.png" alt="View hierarchy" style="width: 400px;"/>
+
+### Declarative and Programmatic Approach in Creating UI
+
+In Android app development, when creating the UI, you start with XML file. This appoach is called Declarative approach. The declarative approach involves using XML to declare what the UI will look like, similar to creating a web page using HTML. You write tags and specify elements to appear on your screen. If you have ever handcoded an HTML page, you did pretty much the same work as creating an Android screen.
+
+Graphical mode in Eclipse provide what-you-see-is-what-you-get (WYSIWYG) view so you can arrange your UI layout easily. However, Declarative approach do not provide ways to manipulate or handling UI event. For that purpose, we use Programmatic approach which involves referring to XML resources using its resource ID and write Java code to respond to UI event such as click and others.
 
 ### Common Layout
 
@@ -64,6 +72,9 @@ Some of Eclipse Graphical editor that you need to know :
 1. Properties View. Shows property of a `View` object. For example, if you select `TextView` in the Outline View, you will see in Properties that you can change its `Id`, `Text`, `Hint` and many others. As we have mentioned before, you can edit the properties directly in XML file. 
 1. Graphical and XML mode switch. You can switch between Graphical mode and XML with these buttons.
 
+<br/>
+Let's start to work.
+
 ### Add Views to Layout
 
 Now, we will add some `Views` to our layout
@@ -77,6 +88,19 @@ Now, we will add some `Views` to our layout
 You will have view like shown in the next image.
 
 <img src="https://i.cloudup.com/0BIp9fVKZ4-3000x3000.png" alt="Simple currency layout" style="width: 400px;"/>
+
+### Edit View Id
+
+Next, we edit each of the `View` id. We want to name our `View` with easy to remember `id` names, so we can refer to it easily from our Java code. If you click one of the `View` in Outline, you can change its `id` by clicking button `[...]` in `id` property. It is a good practice to change the `id` value instead of using default ones.
+
+<img src="https://i.cloudup.com/tRY4HUJPCa-3000x3000.png" alt="Simple currency layout" style="width: 500px;"/>
+
+1. Change `textView1` to `titleText`
+1. Change `editText1` to `inputCurrency`
+1. Change `textView2` to `outputCurrency`
+1. Change `button1` to `convertButton`
+
+Note that you can also change `View` id directly in XML file.
 
 
 

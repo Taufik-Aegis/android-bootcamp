@@ -125,10 +125,12 @@ This is what we have in **AndroidManifest.xml**.
   </manifest>
 ```
 
-`@` sign (for example `@drawable/ic_launcher` and `@string/app_name`) in xml file
+`@` sign (for example `@drawable/ic_launcher` and `@string/app_name`) in XML file is reference to other resource data in another file. For example, `@string/app_name` will point to data in `string` resource with name `app_name`. We will see this `string` resource later. `@drawable` will point to image located in drawables folders.
 
+#### Note on Android Resource
 
-#### Note on Android XML Resource
+**1. XML Format**
+<br/>
 
 Most of the Android resource files (with exception of images) are represented in XML format. XML stands for eXtensible Markup Language, it is one most common text file format used. It is easy to read by both human and machine. You can read more about XML [here](http://www2.informatik.hu-berlin.de/~xing/Lib/Docs/jaxp/docs/tutorial/overview/1_xml.html). Basically, XML file has tag (identifiers enclosed in angle brackets, like this: <...>) and attribute (additional information included as part of the tag itself, within the tag's angle brackets.). Simple example shown below:
 
@@ -136,12 +138,15 @@ Most of the Android resource files (with exception of images) are represented in
 <tag attribute="some value">This is the content of tag</tag>
 ```
 
-How the data arranged in tag or attribute depends on who created the schema (XML data structure). 
+There is no rule on how the data arranged in tag or attribute. It depends on who created the schema (XML data structure)
+
+**2. Viewing Resource in XML**
+<br/>
 
 When you open AndroidManifest.xml, you will not see XML file directly. Eclipse will show view which represent the XML contents so its easy to edit. If you want to see the XML content, you can switch the view, by clicking AndroidManifest.XML tab at the bottom. This also applied to any other XML files in the project. Here, I will show you only the XML code as shown previously.
 
 <img src="https://i.cloudup.com/YrbdwcGktk-3000x3000.png" alt="Android project structure" style="width: 500px;"/>
- 
+
 ### Layout XML File
 
 Layout XML file is located in **res/layout/** folder. The layout file specifies the layout of your screen. Layout consists of views that create your app screen. In this case, we have only one screen (named `activity_main.xml`) and it’s loaded by the MainActivity.java. 
@@ -165,8 +170,26 @@ Layout XML file is located in **res/layout/** folder. The layout file specifies 
   </RelativeLayout>
 ```
 
+In this layout file, we have on view which is `TextView` which contain attribute `android:text` point to other resource `@string/hello_world`. 
 
-### Android Resource
+### String
+
+String resource located in **res/values/strings.xml** . If you look to the XML content you will see something like below:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hello</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+</resources>
+```
+
+If you recall previously, in AndroidManifest.xml, we see `@string/app_name` and in `activity_main.xml` we see `@string/hello_world`. Those will point to value in this `strings` resources. If you change `<string name="hello_world">Hello world!</string>` into `<string name="hello_world">Halo, this is my great app</string>` and you re-run your app, you will see the text in app is changed.
+
+This is the best practice for separating the concerns of various files, even if they are XML files. In other words, layout XML is responsible for the layout of widgets, but strings XML is responsible for their textual content
+
+### R.java
 
 When developing Android application, most of the time we will spend in resource **res/** folder and Java **src/** folder. It is important to understand relation between files and other data in **res/** to **R.java** to your Java file. The process is illustrated below.
 
@@ -174,6 +197,8 @@ When developing Android application, most of the time we will spend in resource 
 
 1. When you compile your app, Android SDK (aapt) will generate resource ID to **R.java** file. The hexadecimal number you see (for example: 0x7f030000) is pointer to location of resource file in compiled Android resource.
 1. When you want to use the resource, you access the resource using ID from **R.java**. 
+
+We can say that **R.java** file is the glue between the world of Java and the world of resources. It is an automatically generated file, and as such, you never modify it. It is recreated every time you change anything in the res directory, for example, when you add an image or add/edit XML file.
 
 #### Error in Accessing Resource ID 
 
@@ -184,5 +209,9 @@ Because Android SDK generate **R.java** file during compilation, when you have e
 
 <img src="https://i.cloudup.com/cHUZLT1RvZ-3000x3000.png" alt="Clean" style="width: 500px;"/>
 
-If you notice in menu above, you see **Build Automatically** is checked. When you clean the project, Eclipse will automatically re-compile the project and **R.java** file. Eclipse also will automatically re-compile the project when you add new resource or save Java file.
+If you notice in menu above, you see **Build Automatically** is checked. When you clean the project, Eclipse will automatically re-compile the project and **R.java** file. Eclipse also will automatically re-compile the project when you add new resource or add/edit then save Java file.
+
+#### Resource Naming
+
+Because resource will be compiled into R.java, its is required that resource name follow standard Java variable naming guidelines. For example, first letter should be alphabet and not numeric, and using dash (-) is not allowed. In resource, common name is using lower case separated by underscore (_). For example `app_name`.
 

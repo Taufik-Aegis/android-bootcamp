@@ -36,7 +36,7 @@ After we have ADT Bundle installed, we are ready to create our Android applicati
 
 <img src="https://i.cloudup.com/yZGgFq7uMm-3000x3000.png" alt="Android emulator" style="width: 400px;"/>
 
-## Create new Android Application
+## Create new Android Application Project
 
 * In Eclipse menu, click **File** then click **New** then click **Android Application Project** 
 

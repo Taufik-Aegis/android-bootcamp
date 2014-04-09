@@ -244,3 +244,15 @@ code that runs your application.
 * **Native libraries**. Optionally, your application may include some native code, such as C/C++ li- braries. These libraries could be packaged together with your APK file.
 * **AndroidManifest.xml**. You app manifest file
 * **META-INF**. Which contain certificate of the application.
+
+## Android Project Location in Windows Explorer
+
+You have created new Android project in Eclipse, but where is the project files in your Windows Explorer? If you recall when you run Eclipse the first time, you are asked to set workspace folder. By default, when you create new Android project, project files will be created in the workspace folder. You can check location of your project in project properties. 
+
+* in Eclipse menu, right-click on your project root in **Package Explorer** then click **Properties**.
+
+<img src="https://i.cloudup.com/3d46f0_yTr-1200x1200.png" alt="Clean" style="width: 500px;"/>
+
+* You will see project location in project property page
+
+<img src="https://i.cloudup.com/ZmonhjR1V7-1200x1200.png" alt="Clean" style="width: 500px;"/>

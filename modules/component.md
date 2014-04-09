@@ -30,7 +30,7 @@ Throughout this bootcamp, we will use Activities and Intents in our app. Service
 
 An activity represents a single screen with a user interface where user can interact in order to do something. For example, an message app might have one activity that shows a list of your conversation and another activity to compose and send new message. Although the activities work together to form a cohesive user experience in the contact app, each one is independent of the others. As such, a different app can start any one of these activities (if the message app allows it). For example, a contact app can start the activity in the message app that composes new message, in order for the user to send a message to the specified contact. 
 
-<img src="https://i.cloudup.com/WFQ2jZcLM4-3000x3000.png" alt="Eclipse project view annotated" style="width: 500px;"/>
+<img src="https://i.cloudup.com/WFQ2jZcLM4-3000x3000.png" alt="Message app" style="width: 400px;"/>
 
 We can use a website as an analogy for activities. Just like a website consists of multiple pages, so does an Android application consist of multiple activities.
 
@@ -105,7 +105,7 @@ An activity can exist in essentially three states:
 
 When an activity transitions into and out of the different states described above, it is notified through various callback methods. All of the callback methods are hooks that you can override to do appropriate work when the state of your activity changes. 
 
-<img src="http://developer.android.com/images/training/basics/basic-lifecycle.png" alt="Eclipse project view annotated" style="width: 500px;"/>
+<img src="http://developer.android.com/images/training/basics/basic-lifecycle.png" alt="Lifecycle" style="width: 500px;"/>
 
 Currently we only implemented `onCreate()` callback. `onCreate()` callback is mandatory. You, as developer is recommended to implement another callback so the app respond appropriately to state changes. Below is skeleton code that implements all Activity callback.
 

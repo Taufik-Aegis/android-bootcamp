@@ -82,9 +82,89 @@ If you look into **Package Explorer** view above, you will see several items wit
 * **libs/**. This contains third party Java library (.jar) files that you use. You can drag and drop the .jar file here, or copy to your project libs folder in Windows Explorer.
 * **res/**. Contains application resources, such as drawable files, layout files, and string values. Files that added here can be accessed from Java code using generated IDs. When your application is compiled, **aapt** (Android Asset Packaging Tool) generates the R class (located in **gen/** folder), which contains resource IDs for all the resources in your **res/** directory. You can read more about Android resource [here](http://developer.android.com/guide/topics/resources/overview.html)
   * drawable-* - Contain graphical resources (jpegs, pngs, etc) for devices with the specific resolution.  
-  * layout - On the surface, layout contains xml descriptors of views. 
+  * layout - Layout contains xml descriptors of views. 
   * menu - The menu folder contains xml descriptors of menus. 
-  * values - This folder contains xml files with key value pairs essentially. 
+  * values - This folder contains xml files with key value pairs.
+
+## Android Project Files
+
+In Android project image above, you see several files available in your project. We will take a look into some of the files to gain more understanding about Android project.
+
+### Android Manifest
+
+Every application must have an **AndroidManifest.xml** file (with precisely that name) in its root directory. The manifest file presents essential information about your app to the Android system, information the system must have before it can run any of the app's code. It contains information about the Android application such as app package name, minimum Android version, permission to access Android device capabilities such as internet access permission and others. It describes the components of the application — the activities, services, broadcast receivers, and content providers that the application is composed of. We will discuss Android application components later. 
+
+This is what we have in **AndroidManifest.xml**. 
+
+```
+  <?xml version="1.0" encoding="utf-8"?>
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.mygreatcompany.hello"
+      android:versionCode="1"
+      android:versionName="1.0" >
+
+      <uses-sdk
+          android:minSdkVersion="8"
+          android:targetSdkVersion="18" />
+
+      <application
+          android:allowBackup="true"
+          android:icon="@drawable/ic_launcher"
+          android:label="@string/app_name"
+          android:theme="@style/AppTheme" >
+          <activity
+              android:name="com.mygreatcompany.hello.MainActivity"
+              android:label="@string/app_name" >
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+          </activity>
+      </application>
+  </manifest>
+```
+
+`@` sign (for example `@drawable/ic_launcher` and `@string/app_name`) in xml file
+
+
+#### Note on Android XML Resource
+
+Most of the Android resource files (with exception of images) are represented in XML format. XML stands for eXtensible Markup Language, it is one most common text file format used. It is easy to read by both human and machine. You can read more about XML [here](http://www2.informatik.hu-berlin.de/~xing/Lib/Docs/jaxp/docs/tutorial/overview/1_xml.html). Basically, XML file has tag (identifiers enclosed in angle brackets, like this: <...>) and attribute (additional information included as part of the tag itself, within the tag's angle brackets.). Simple example shown below:
+
+```
+<tag attribute="some value">This is the content of tag</tag>
+```
+
+How the data arranged in tag or attribute depends on who created the schema (XML data structure). 
+
+When you open AndroidManifest.xml, you will not see XML file directly. Eclipse will show view which represent the XML contents so its easy to edit. If you want to see the XML content, you can switch the view, by clicking AndroidManifest.XML tab at the bottom. This also applied to any other XML files in the project. Here, I will show you only the XML code as shown previously.
+
+<img src="https://i.cloudup.com/YrbdwcGktk-3000x3000.png" alt="Android project structure" style="width: 500px;"/>
+ 
+### Layout XML File
+
+Layout XML file is located in **res/layout/** folder. The layout file specifies the layout of your screen. Layout consists of views that create your app screen. In this case, we have only one screen (named `activity_main.xml`) and it’s loaded by the MainActivity.java. 
+
+```
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingBottom="@dimen/activity_vertical_margin"
+      android:paddingLeft="@dimen/activity_horizontal_margin"
+      android:paddingRight="@dimen/activity_horizontal_margin"
+      android:paddingTop="@dimen/activity_vertical_margin"
+      tools:context=".MainActivity" >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/hello_world" />
+
+  </RelativeLayout>
+```
+
 
 ### Android Resource
 
@@ -104,6 +184,5 @@ Because Android SDK generate **R.java** file during compilation, when you have e
 
 <img src="https://i.cloudup.com/cHUZLT1RvZ-3000x3000.png" alt="Clean" style="width: 500px;"/>
 
-If you notice in menu above, you see **Build Automatically** is checked. When you clean the project, Eclipse will automatically re-compile the project and **R.java** file. 
-
+If you notice in menu above, you see **Build Automatically** is checked. When you clean the project, Eclipse will automatically re-compile the project and **R.java** file. Eclipse also will automatically re-compile the project when you add new resource or save Java file.
 

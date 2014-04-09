@@ -49,7 +49,6 @@ After we have ADT Bundle installed, we are ready to create our Android applicati
 <img src="https://i.cloudup.com/pbT1Jf3fnZ-3000x3000.png" alt="Project wizard" style="width: 500px;"/>
 
 * Click next, use default for all steps until then finally, click Finish. You will see your project is created and Eclipse wil show `MainActivity.java` content.
-  * 
 
 <img src="https://i.cloudup.com/9bvpXrEsq1-3000x3000.png" alt="Eclipse project view" style="width: 500px;"/>
 
@@ -99,7 +98,7 @@ When you create new Android project, you see wizard dialog like below. You see o
 
 * Minimum SDK is the lowest level of Android SDK version that your app will support. There are a lot of new features since Android first introduced. You might want to change minimum SDK if you want to use new API only available from newer SDK. The Android system will prevent the user from installing the application if the system's API Level is lower than the value specified in this attribute.
 * Target SDK is the attribute informs the system that you have tested against the target version and the system should not enable any compatibility behaviors to maintain your app's forward-compatibility with the target version.
-* Compile With will list SDK available in your computer. By default, this will be the latest version of Android SDK in ADT Bundle which you installed. 
+* Compile With will list SDK available in your computer. By default, this will be the latest version of Android SDK in ADT Bundle which you installed. You can install more version of Android SDK using SDK manager.
 
 You can see details on Android version history [here](http://en.wikipedia.org/wiki/Android_version_history)
 

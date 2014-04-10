@@ -111,9 +111,21 @@ Android recommended us to use string resource instead of hardcode the string int
 <img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Update String Resource" />
 
 1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and `Resources Elements` panel will show up.
+
+<img src="http://imageshack.com/a/img850/4898/09lt.png" alt="Package Explorer String" />
+
 2. Click `Add` Button. Dialog will show up.
+
+<img src="http://imageshack.com/a/img823/3599/lwmr.png" alt="Add String Resource" />
+
 3. Choose `String`, click `OK`.
+
+<img src="http://imageshack.com/a/img198/9060/cxvv.png" alt="String Resource" />
+
 4. On the right side of Resources Elements panel, type the name and value of the string resource. `Name` is the id of our string element and `Value` is the name of the string we would want to.
+
+<img src="http://imageshack.com/a/img691/9899/utev.png" alt="Resource String and Value" />
+
 5. Set all of the string resource in our layout we want to change (`titleText`, `convertButton`).
 
 **Important**

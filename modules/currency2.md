@@ -11,4 +11,6 @@
 
 # App Project - Currency Converter - Phase 2
 
-In Progress
+Adding capability to convert multiple currencies. Here, we will learn, how to use `Dialog` and use Array to store currency data.
+
+In Progress Currency 2

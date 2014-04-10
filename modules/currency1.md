@@ -112,7 +112,7 @@ Android recommended us to use string resource instead of hardcode the string int
 
 1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and `Resources Elements` panel will show up.
 
-2. Click `Add` Button. Dialog will show up.
+2. Click `Add` Button. Dialog box will show up.
 
 3. Choose `String`, click `OK`.
 

@@ -11,4 +11,6 @@
 
 # App Project - Currency Converter - Phase 3
 
-In Progress
+Adding capability to update currency rate from internet using `HttpURLConnection`, create new thread using `AsyncTask`, process JSON data, store currency data in `SharedPreferences`, and how to use permission.
+
+In Progress Currency 3

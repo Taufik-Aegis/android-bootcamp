@@ -19,6 +19,5 @@ For printing purposes, we use [gitprint](https://gitprint.com). To make it even 
 * **App - Currency - Phase 1** [[view](currency1.md)] [<a href="https://gitprint.com/devacademy/android-bootcamp/blob/master/modules/currency1.md" target="_blank">print</a>]
 * **App - Currency - Phase 2** [[view](currency2.md)] [<a href="https://gitprint.com/Taufik-Aegis/android-bootcamp/blob/master/modules/currency2.md" target="_blank">print</a>]
 * **App - Currency - Phase 3** [[view](currency3.md)] [<a href="https://gitprint.com/Taufik-Aegis/android-bootcamp/blob/master/modules/currency3.md" target="_blank">print</a>]
-https://gitprint.com/jquery/jquery/blob/master/README.md
 
 

@@ -126,7 +126,9 @@ The name in input field must match with the name of if string resource, if your 
 
 ### Set Click Event in Layout
 
-We want to make our apps convert currency from dollar to rupiah, so we attach event click on convert `button`.
+We want to make our apps convert currency from dollar to rupiah, so we attach event click on `convert button`.
+
+<img src="http://imageshack.com/a/img801/1484/omix.png" alt="onClick Event Button" />
 
 Open `activity_main.xml` file located in `Converter->res->layout`. Select `activity_main.xml` tab, located beside Graphical Layout tab. Add `android.onClick = "onClicked"` in button xml.
 
@@ -155,4 +157,6 @@ Open `MainActivity.java' file. Type code below inside MainActivity class.
     output.setText(((Double)outputValue).toString());
   }
 ```
+
+<img src="http://imageshack.com/a/img706/5366/vruj.png" alt="onClick Event Button" />
 

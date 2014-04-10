@@ -108,6 +108,23 @@ If you don't change the `id` you might get error later when following this bootc
 
 Android recommended us to use string resource instead of hardcode the string into `View` property directly. This will make it easier for us to support multiple language by using different string resource file. We will change text in `titleText`.
 
+<img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Update String Resource" />
+
+1. On package explorer, Double click 'string.xml' file located in 'Converter->res->values' path and 'Resources Elements' panel will show up.
+2. Click 'Add' Button. Dialog will show up.
+3. Choose 'String', click 'OK'.
+4. On the right side of Resources Elements panel, type the name and value of the string resource. 'Name' is the id of our string element and 'value' is the name of the string we would want to.
+5. Set all of the string resource in our layout we want to change ('titleText', 'convertButton').
 
 
+### Create array of currency
 
+### Create currency class
+
+### Get data from currency class
+
+### Get data from inputCurrency
+
+### Manipulated data from inputCurrency
+
+### Set the ouputCurrency with converted data

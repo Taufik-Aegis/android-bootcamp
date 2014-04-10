@@ -91,7 +91,7 @@ You will have view like shown in the next image.
 
 ### Edit View Id
 
-Next, we edit each of the `View` id. We want to name our `View` with easy to remember `id` names, so we can refer to it easily from our Java code. If you click one of the `View` in Outline, you can change its `id` by clicking button `[...]` in `id` property. It is a good practice to change the `id` value instead of using default ones.
+Next, we edit each of the `View` id. We want to name our `View` with easy to remember `id` names, so we can refer to it easily from our Java code. If you click one of the `View` in Outline, you can change its `id` by clicking button in `id` property. It is a good practice to change the `id` value instead of using default ones. You can also change `View` id directly in XML file.
 
 <img src="https://i.cloudup.com/tRY4HUJPCa-3000x3000.png" alt="Simple currency layout" style="width: 500px;"/>
 
@@ -100,7 +100,14 @@ Next, we edit each of the `View` id. We want to name our `View` with easy to rem
 1. Change `textView2` to `outputCurrency`
 1. Change `button1` to `convertButton`
 
-Note that you can also change `View` id directly in XML file.
+**Important**
+
+If you don't change the `id` you might get error later when following this bootcamp notes. In example codes, we will use `id` that we use here.
+
+### Update Text String
+
+Android recommended us to use string resource instead of hardcode the string into `View` property directly. This will make it easier for us to support multiple language by using different string resource file. We will change text in `titleText`.
+
 
 
 

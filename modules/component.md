@@ -11,7 +11,7 @@
 
 # Android App Component
 
-Android app components also known as main building blocks are components that you use as an application developer to build Android apps. They are the conceptual items that you put together to create abigger whole. When you start  thinking about your application, it is good to take a top-down approach. You design your application in terms of screens, features, and the interactions between them.
+Android app components also known as main building blocks are components that you use as an application developer to build Android apps. They are the conceptual items that you put together to create a bigger whole. When you start  thinking about your application, it is good to take a top-down approach. You design your application in terms of screens, features, and the interactions between them.
 
 There are four different types of app components. Each type serves a distinct purpose and has a distinct lifecycle that defines how the component is created and destroyed. Lists of Android app components :
 

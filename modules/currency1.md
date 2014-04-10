@@ -110,12 +110,15 @@ Android recommended us to use string resource instead of hardcode the string int
 
 <img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Update String Resource" />
 
-1. On package explorer, Double click 'string.xml' file located in 'Converter->res->values' path and 'Resources Elements' panel will show up.
-2. Click 'Add' Button. Dialog will show up.
-3. Choose 'String', click 'OK'.
-4. On the right side of Resources Elements panel, type the name and value of the string resource. 'Name' is the id of our string element and 'value' is the name of the string we would want to.
-5. Set all of the string resource in our layout we want to change ('titleText', 'convertButton').
+1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and `Resources Elements` panel will show up.
+2. Click `Add` Button. Dialog will show up.
+3. Choose `String`, click `OK`.
+4. On the right side of Resources Elements panel, type the name and value of the string resource. `Name` is the id of our string element and `Value` is the name of the string we would want to.
+5. Set all of the string resource in our layout we want to change (`titleText`, `convertButton`).
 
+**Important**
+
+The name in input field must match with the name of if string resource, if your name and id doesn't match you might your string element will not get updated.
 
 ### Create array of currency
 

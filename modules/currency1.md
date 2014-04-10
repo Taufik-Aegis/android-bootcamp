@@ -112,19 +112,11 @@ Android recommended us to use string resource instead of hardcode the string int
 
 1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and `Resources Elements` panel will show up.
 
-<img src="http://imageshack.com/a/img850/4898/09lt.png" alt="Package Explorer String" />
-
 2. Click `Add` Button. Dialog will show up.
-
-<img src="http://imageshack.com/a/img823/3599/lwmr.png" alt="Add String Resource" />
 
 3. Choose `String`, click `OK`.
 
-<img src="http://imageshack.com/a/img198/9060/cxvv.png" alt="String Resource" />
-
 4. On the right side of Resources Elements panel, type the name and value of the string resource. `Name` is the id of our string element and `Value` is the name of the string we would want to.
-
-<img src="http://imageshack.com/a/img691/9899/utev.png" alt="Resource String and Value" />
 
 5. Set all of the string resource in our layout we want to change (`titleText`, `convertButton`).
 
@@ -132,14 +124,35 @@ Android recommended us to use string resource instead of hardcode the string int
 
 The name in input field must match with the name of if string resource, if your name and id doesn't match you might your string element will not get updated.
 
-### Create array of currency
+### Set Click Event in Layout
 
-### Create currency class
+We want to make our apps convert currency from dollar to rupiah, so we attach event click on convert `button`.
 
-### Get data from currency class
+Open `activity_main.xml` file located in `Converter->res->layout`. Select `activity_main.xml` tab, located beside Graphical Layout tab. Add `android.onClick = "onClicked"` in button xml.
 
-### Get data from inputCurrency
+### Create Event Handler
 
-### Manipulated data from inputCurrency
+Open `MainActivity.java' file. Type code below inside MainActivity class.
 
-### Set the ouputCurrency with converted data
+```
+  public void onClicked(View v) {
+    // constant
+    double USDTORP = 11400;
+
+    // get input view
+    EditText input = (EditText) findViewById(R.id.inputCurrency);
+
+    // get input value
+    double inputValue = Double.parseDouble(input.getText().toString());
+
+    // get output view
+    TextView output = (TextView) findViewById(R.id.outputCurrency);
+
+    // process conversion
+    double outputValue = USDTORP * inputValue;
+
+    // set output view value
+    output.setText(((Double)outputValue).toString());
+  }
+```
+

@@ -110,7 +110,15 @@ Android recommended us to use string resource instead of hardcode the string int
 
 <img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Update String Resource" />
 
-1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and `Resources Elements` panel will show up.
+First, open file `string.xml`. This `string.xml` file located in `Converter->res->values` on package explorer. Double click this file to open String Resource panel. Click `Add` button to add new string resource.
+
+<img src="http://imageshack.com/a/img843/4301/yqyq.jpg" alt="Add String Resource" />
+
+
+
+ step to update text string in our android app 
+
+1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and panel `Android Resources (default)` for string will show up.
 
 2. Click `Add` Button. Dialog box will show up.
 
@@ -134,7 +142,7 @@ Open `activity_main.xml` file located in `Converter->res->layout`. Select `activ
 
 ### Create Event Handler
 
-Open `MainActivity.java' file. Type code below inside MainActivity class.
+Open `MainActivity.java` file. Type code below inside MainActivity class.
 
 ```
   public void onClicked(View v) {

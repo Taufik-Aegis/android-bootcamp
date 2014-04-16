@@ -108,29 +108,20 @@ If you don't change the `id` you might get error later when following this bootc
 
 Android recommended us to use string resource instead of hardcode the string into `View` property directly. This will make it easier for us to support multiple language by using different string resource file. We will change text in `titleText`.
 
-<img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Update String Resource" />
-
 First, open file `string.xml`. This `string.xml` file located in `Converter->res->values` on package explorer. Double click this file to open String Resource panel. Click `Add` button to add new string resource.
 
 <img src="http://imageshack.com/a/img843/4301/yqyq.jpg" alt="Add String Resource" />
 
+After clicking `Add` button, fill two fields that will show up, Name field and Value field. We can fill the field as free as our liking, but to make it easier, just fill the name field like the id name and fill the value field as descriptive as possible but keep it simple. For the purpose of this sample, we create two resource string and give name and value like this one.
 
+* Name: `titleText` Value: `USD to RP`
+* Name: `convertButton` Value: `Convert` 
 
- step to update text string in our android app 
+<img src="http://imageshack.com/a/img811/402/sdx3.jpg" alt="Create String Resource" />
 
-1. On package explorer, Double click `string.xml` file located in `Converter->res->values` path and panel `Android Resources (default)` for string will show up.
+After completed step above, we must set this newly created string resource to the string in our view that hardcoded before. Open `activity_main.xml` and then click the `titleText` `TextView` element that we want to update it's string. In properties panel, choose `Text` parameter and then choose `titleText` project resource to update the string text. Do the same to update the `convert Button` text string.
 
-2. Click `Add` Button. Dialog box will show up.
-
-3. Choose `String`, click `OK`.
-
-4. On the right side of Resources Elements panel, type the name and value of the string resource. `Name` is the id of our string element and `Value` is the name of the string we would want to.
-
-5. Set all of the string resource in our layout we want to change (`titleText`, `convertButton`).
-
-**Important**
-
-The name in input field must match with the name of if string resource, if your name and id doesn't match you might your string element will not get updated.
+<img src="http://imageshack.com/a/img841/9854/5mu1.jpg" alt="Apply String Resource" />
 
 ### Set Click Event in Layout
 
@@ -138,11 +129,11 @@ We want to make our apps convert currency from dollar to rupiah, so we attach ev
 
 <img src="http://imageshack.com/a/img801/1484/omix.png" alt="onClick Event Button" />
 
-Open `activity_main.xml` file located in `Converter->res->layout`. Select `activity_main.xml` tab, located beside Graphical Layout tab. Add `android.onClick = "onClicked"` in button xml.
+Open `activity_main.xml` file located in `Converter->res->layout`. Select `activity_main.xml` tab, located beside Graphical Layout tab. Add `android.onClick = "onClicked"` in button xml. After we attach click event in `button` element, our button will trigger a method reside in java code. This method has a responsibility to handle this event triggered by `button` element.
 
 ### Create Event Handler
 
-Open `MainActivity.java` file. Type code below inside MainActivity class.
+Last step is create event handler. In our last step before we have set up a click event in convert `button`. We must create a function to handle this event. Open `MainActivity.java` file. Type code below inside MainActivity class.
 
 ```
   public void onClicked(View v) {
@@ -168,3 +159,6 @@ Open `MainActivity.java` file. Type code below inside MainActivity class.
 
 <img src="http://imageshack.com/a/img706/5366/vruj.png" alt="onClick Event Button" />
 
+This method triggered if we click convert button. If we click the convert button, View v parameter will get the state of the main_activity layout and referenced it in it's method. `input` variable contain the value of input that we enter. This value then converted to `Double` type and stored in `inputValue` variable. After currency conversion prosess completed, it's result and then is set in output TextView.
+
+<img src="http://imageshack.com/a/img834/2996/8bt1.png" alt="Currency Converter" />

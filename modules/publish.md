@@ -85,7 +85,7 @@ For information complete information, see Google Play.
 
 The easiest and quickest way to release your application is to send it to a user through email. To do this, you prepare your application for release and then attach it to an email and send it to a user. When the user opens your email message on their Android-powered device the Android system will recognize the APK and display an Install Now button in the email message (see figure 1). Users can install your application by touching the button.
 
-**Notes : ** The Install Now button shown in Figure 1 appears only if a user has configured their device to allow installation from unknown sources and has opened your email with the native Gmail application.
+**Notes** The Install Now button shown in Figure 1 appears only if a user has configured their device to allow installation from unknown sources and has opened your email with the native Gmail application.
 
 Distributing applications through email is convenient if you are sending your application to only a few trusted users, but it provides few protections from piracy and unauthorized distribution; that is, anyone you send your application to can simply forward it to someone else.
 
@@ -101,4 +101,4 @@ Although it is relatively easy to release your application on your own website, 
 
 Android protects users from inadvertent download and install of apps from locations other than Google Play (which is trusted). It blocks such installs until the user opts-in Unknown sources in Settings > Security, shown in Figure 2. To allow the installation of applications from other sources, users need to enable the Unknown sources setting on their devices, and they need to make this configuration change before they download your application to their devices.
 
-**Notes : ** Some network providers do not allow users to install applications from unknown sources.
+**Notes** Some network providers do not allow users to install applications from unknown sources.

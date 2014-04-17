@@ -11,7 +11,24 @@
 
 # App Project - Currency Converter - Phase 3
 
-Adding capability to update currency rate from internet using `HttpURLConnection`, create new thread using `AsyncTask`, process JSON data, store currency data in `SharedPreferences`, and how to use permission.
+In phase 1, we have learn how to create a simple currency converter, we learn about a simple complete app, XML layout, string resource and create an event handler.
+
+In phase 2, we have learn how to enhance currency converter app with multiple currencies capability. we learn how to use `Dialog` and use `Array` to store currency data.
+
+In phase 3, we will learn new how to add new capability to our apps. We will add capability to update currency rate from internet using `HttpURLConnection`, create new thread using `AsyncTask`, process JSON data, store currency data in `SharedPreferences`, and how to use permission.
+
+Using our previous layout we will add one new function/capability to our apps. Our apps now will get data of currency rates from internet using `HttpURLConnection`. First we create new component in our action bar.
+
+## Add Refresh button in Action Bar
+
+* Open `main.xml` file located in `Converter -> res -> menu` on Package Explorer.
+* Click Add to create new menu element.
+* Fill the id so we can referenced it later.
+* Fill the title field using string resource like in previous phase.
+* Fill the icon using drawable icon. First download the icon from here [<a href="http://developer.android.com/downloads/design/Android_Design_Downloads_20131106.zip" target="_blank">print</a>]
+* Extract downloaded zip file and then copy refresh icon from the extracted zip file to it's respectable folder, `res -> drawable-xxxx`.
+
+<img src="http://imageshack.com/a/img842/2392/31qu.png" alt="Create Refresh Action" />
 
 ## Networking
 

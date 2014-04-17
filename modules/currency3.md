@@ -202,6 +202,7 @@ To read the data that we stored in SharedPreferences we use this code.
     SharedPreferences sharedPref = getSharedPreferences("Currency", Context.MODE_PRIVATE);
     String latestCurrency = sharedPref.getString("latestCurrency", "");
     ```
+
 This is a code that doing the download from data provider in `AsyncTask`, parsing it's response data that arrived and storing it's parsed data in SharedPreferences.
 
 ```

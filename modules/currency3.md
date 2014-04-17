@@ -30,28 +30,11 @@ Using our previous layout we will add one new function/capability to our apps. O
 
 <img src="http://imageshack.com/a/img842/2392/31qu.png" alt="Create Refresh Action" />
 
-## Networking
+## Handling Refresh button
 
-* Explain
-  * Server - Client Architecture
-  * Anatomy of HTTP request
-  * HTTP request and response BODY
-  * JSON
+After we create new button for our new function, next is create it's handler. We use `switch` function in `onOptionsItemSelected` method so that our handler will only running if button `Refresh` is clicked.
 
-* Demo
-  * In Chrome, install Postman
-  * Make GET and POST request
-  * Show network tab in Chrome developer window.
-
-## Networking in Android
-
-
-* Add Refresh button in Action Bar
-  * res/menu/main.xml
-  * Add refresh action
-* Handle action in Activity. Remember Java `switch`
-
-  ```
+```
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
       case R.id.action_refresh:
@@ -60,9 +43,11 @@ Using our previous layout we will add one new function/capability to our apps. O
       }
       return true;
     } 
-  ```
+```
 
-* Check if we have connection
+## Networking
+
+We will use `ConnectivityManager` class to check if we have internet connection.
 
   ```
     ConnectivityManager connMgr = (ConnectivityManager) 
@@ -75,6 +60,11 @@ Using our previous layout we will add one new function/capability to our apps. O
       Toast.makeText(getApplicationContext(), "Network connection is not available", Toast.LENGTH_SHORT).show();
     }
   ```
+This url `https://openexchangerates.org/api/latest.json?app_id=cb0688771d774020836ec9422dfa93f7` will act as a request to get the latest currency rate from `openexchangerate.org`. This data provider will reply our request with sending data formatted in JSON.
+
+## Download the data
+
+To download the data we requested.
 
 * Do actual download. Remember Java exception handling
   ```
@@ -126,31 +116,13 @@ Using our previous layout we will add one new function/capability to our apps. O
     return contentAsString;
   }
   ```
+To implementing the `HttpURLConnection` class we must surround it with try catch block. So, if error arouse when app is running, it's exception class will handle it for us and the app wouldn't crash when running.
 
-* Try the app, what happened?
-* Explain
-  * permission
-
-## Intent
-
-### Open browser
-
-  ```
-    Intent intent = new Intent(Intent.ACTION_VIEW, 
-        Uri.parse("http://www.bloomberg.com/news/currencies/"));
-    startActivity(intent);
-  ```
-
-### Share content
-
-  ```
-    Intent intent = new Intent(Intent.ACTION_SEND);
-    intent.setType("text/plain");
-    intent.putExtra(android.content.Intent.EXTRA_TEXT, "News for you!");
-    startActivity(intent); 
-  ```
+`HttpURLConnection` class using `GET` method to send it's request and response from data provider stored as a string.
 
 ## Thread
+
+To make our app responsive, we use `AsyncTask` to running our downloading code so we can interact with our app even when our app is running code in the background.
 
 * Use `AsyncTask`
 * Declare private class
@@ -160,11 +132,6 @@ Using our previous layout we will add one new function/capability to our apps. O
       ...
     }
   ```
-
-* Explain AsyncTask param
-  * Params
-  * Progress
-  * Result
 
 * Need to implements AsyncTask methods
 
@@ -202,9 +169,13 @@ Using our previous layout we will add one new function/capability to our apps. O
   ```
 
 * Task
-  * Move our download code the AsyncTask
+  * Move our download code to AsyncTask
+
+With this code, our download code will running in the background process and will not hindered the flow of the app when refresh button is clicked.
 
 ## Parsing JSON
+
+After we get the JSON data, next step is to parsing it. JSON object use some sort of structural data and to extract this JSON we need to follow this structure. We use `JSONObject` class to help us parsing our data.
 
 * Use `JSONObject` and `JSONArray`
   ```
@@ -213,10 +184,9 @@ Using our previous layout we will add one new function/capability to our apps. O
     String base = reader.getString("base");
   ```
 
-* Task
-  * Parse JSON and update currency HashMap
-
 ## Storing data with SharedPreferences
+
+After we parsing JSON data, it's extracted data then stored in SharedPreferences.
 
 * Write
     ```
@@ -225,12 +195,82 @@ Using our previous layout we will add one new function/capability to our apps. O
     editor.putString("latestCurrency", result);
     editor.commit();
     ```
+To read the data that we stored in SharedPreferences we use this code.
 
 * Read
     ```
     SharedPreferences sharedPref = getSharedPreferences("Currency", Context.MODE_PRIVATE);
     String latestCurrency = sharedPref.getString("latestCurrency", "");
     ```
+This is a code that doing the download from data provider in `AsyncTask`, parsing it's response data that arrived and storing it's parsed data in SharedPreferences.
 
-* Task
-  * Any idea?
+```
+  private class DownloadCurrencyData extends AsyncTask<String, Void, String> {
+
+    // fungsi dengan parameter, string... data berupa array
+    @Override
+    protected String doInBackground(String... params) {
+      // TODO Auto-generated method stub
+
+      // call url in background
+      String url = params[0];
+      String data = downloadData(url);
+      // Log.v(TAG, data);
+
+      return data;
+    }
+
+    // sebelum eksekusi
+    @Override
+    protected void onPreExecute() {
+      // TODO Auto-generated method stub
+
+    }
+
+    // sesudah eksekusi
+    @Override
+    protected void onPostExecute(String result) {
+      // TODO Auto-generated method stub
+      // Log.v(TAG, result);
+
+      Toast.makeText(getApplicationContext(),
+          "Update nilai tukar terbaru", Toast.LENGTH_SHORT)
+          .show();
+
+      // { -> json as an object, [ -> json as an array
+      try {
+        JSONObject reader = new JSONObject(result);
+        // Log.v(TAG, reader.getString("base"));
+
+        JSONObject ratesData = reader.getJSONObject("rates");
+
+        //store latest rate on file with sharedpreference
+        SharedPreferences sharedPref = getSharedPreferences("Currency", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        
+        // get rates
+        for (int i = 0; i < rates.length; i++) {
+
+          Currency currency = rates[i];
+
+          // update latest rate
+          Double latestRate = ratesData.getDouble(currency.getName());
+          Log.v(TAG, latestRate.toString());
+          
+          //save value
+          editor.putString(currency.getName(), latestRate.toString());
+          
+          rates[i].setRate(latestRate);
+        }
+        
+        editor.commit();
+
+      } catch (Exception e) {
+        // TODO: handle exception
+        e.printStackTrace();
+      }
+
+    }
+
+  }
+```

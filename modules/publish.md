@@ -67,20 +67,6 @@ If you want to distribute your apps to the broadest possible audience, releasing
 
 Google Play is the premier marketplace for Android apps and is particularly useful if you want to distribute your applications to a large global audience. However, you can distribute your apps through any app marketplace you want or you can use multiple marketplaces.
 
-### Releasing Your Applications on Google Play
-
-Google Play is a robust publishing platform that helps you publicize, sell, and distribute your Android applications to users around the world. When you release your applications through Google Play you have access to a suite of developer tools that let you analyze your sales, identify market trends, and control who your applications are being distributed to. You also have access to several revenue-enhancing features such as in-app billing and application licensing. The rich array of tools and features, coupled with numerous end-user community features, makes Google Play the premier marketplace for selling and buying Android applications.
-
-Releasing your application on Google Play is a simple process that involves three basic steps:
-
-Preparing promotional materials.
-To fully leverage the marketing and publicity capabilities of Google Play, you need to create promotional materials for your application, such as screenshots, videos, graphics, and promotional text.
-Configuring options and uploading assets.
-Google Play lets you target your application to a worldwide pool of users and devices. By configuring various Google Play settings, you can choose the countries you want to reach, the listing languages you want to use, and the price you want to charge in each country. You can also configure listing details such as the application type, category, and content rating. When you are done configuring options you can upload your promotional materials and your application as a draft (unpublished) application.
-Publishing the release version of your application.
-If you are satisfied that your publishing settings are correctly configured and your uploaded application is ready to be released to the public, you can simply click Publish in the developer console and within minutes your application will be live and available for download around the world.
-For information complete information, see Google Play.
-
 ### Releasing your application through email
 
 The easiest and quickest way to release your application is to send it to a user through email. To do this, you prepare your application for release and then attach it to an email and send it to a user. When the user opens your email message on their Android-powered device the Android system will recognize the APK and display an Install Now button in the email message (see figure 1). Users can install your application by touching the button.
@@ -103,17 +89,28 @@ Android protects users from inadvertent download and install of apps from locati
 
 **Notes** Some network providers do not allow users to install applications from unknown sources.
 
+### Releasing Your Applications on Google Play
 
-# Publish App to Google Play
+Google Play is a robust publishing platform that helps you publicize, sell, and distribute your Android applications to users around the world. When you release your applications through Google Play you have access to a suite of developer tools that let you analyze your sales, identify market trends, and control who your applications are being distributed to. You also have access to several revenue-enhancing features such as in-app billing and application licensing. The rich array of tools and features, coupled with numerous end-user community features, makes Google Play the premier marketplace for selling and buying Android applications.
 
-## Register as developer
+Releasing your application on Google Play is a simple process that involves three basic steps:
+
+Preparing promotional materials.
+To fully leverage the marketing and publicity capabilities of Google Play, you need to create promotional materials for your application, such as screenshots, videos, graphics, and promotional text.
+Configuring options and uploading assets.
+Google Play lets you target your application to a worldwide pool of users and devices. By configuring various Google Play settings, you can choose the countries you want to reach, the listing languages you want to use, and the price you want to charge in each country. You can also configure listing details such as the application type, category, and content rating. When you are done configuring options you can upload your promotional materials and your application as a draft (unpublished) application.
+Publishing the release version of your application.
+If you are satisfied that your publishing settings are correctly configured and your uploaded application is ready to be released to the public, you can simply click Publish in the developer console and within minutes your application will be live and available for download around the world.
+For information complete information, see Google Play.
+
+#### Register as developer
 
 * Go to [https://play.google.com/apps/publish](https://play.google.com/apps/publish)
 * Login with your google account
 * Pay one time registration fee $25
 * Ready to publish!
 
-## Preparing Store Listing
+#### Preparing Store Listing
 
 * Product detail
   * Title
@@ -137,7 +134,7 @@ Android protects users from inadvertent download and install of apps from locati
   * Promo Video
       * Youtube url
 
-## Preparing APK
+#### Preparing APK
 
 * Application launcher icon [reference](http://developer.android.com/design/style/iconography.html)
   * Size
@@ -157,6 +154,6 @@ Android protects users from inadvertent download and install of apps from locati
       * Fill keystore data
   * Set APK path
 
-## Upload APK in publish website
+#### Upload APK in publish website
   * Set pricing and distribution
   * Publish

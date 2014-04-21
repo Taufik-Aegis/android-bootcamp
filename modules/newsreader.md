@@ -8,11 +8,62 @@
 <br/>
 <br/>
 
-# App Project - News Reader
+# App Project - News Reader Phase 1
 
 For this project we will learn few new concept. Using API on android library, using intent to fire a new action and many other things. We have learn a basic concept how to build an application for android in our previous lesson, using Currency Converter as a project. For now we will learn through more deeply into an android development world. By building News Reader app, we hope we can master a new concept: intent, listView, API and a few other things. This app is a simple version of RSS reader in android environment. Just like fetching information on our currency converter app, this app also using internet connection and sending a request of rss in one of rss feeder service. After this rss data available and then we show this data in our list view layout that we have prepared before.
 
 We put our new function (News Reader) by creating a new layout for user interface and a new class for the actual code to handle this new function. Just like our previous app we create new menu and if user choose this menu it will triggering new layout with a list of news we grab from rss feeder service. This rss feeder website provide us with the actual data of news information on it's website.
+
+#### RSS
+
+RSS (Rich Site Summary); originally RDF Site Summary; often dubbed Really Simple Syndication, uses a family of standard web feed formats to publish frequently updated information: blog entries, news headlines, audio, video. An RSS document (called "feed", "web feed", or "channel") includes full or summarized text, and metadata, like publishing date and author's name.
+
+RSS feeds enable publishers to syndicate data automatically. A standard XML file format ensures compatibility with many different machines/programs. RSS feeds also benefit users who want to receive timely updates from favourite websites or to aggregate data from many sites.
+
+Subscribing to a website RSS removes the need for the user to manually check the web site for new content. Instead, their browser constantly monitors the site and informs the user of any updates. The browser can also be commanded to automatically download the new data for the user.
+
+Software termed "RSS reader", "aggregator", or "feed reader", which can be web-based, desktop-based, or mobile-device-based, present RSS feed data to users. Users subscribe to feeds either by entering a feed's URI into the reader or by clicking on the browser's feed icon. The RSS reader checks the user's feeds regularly for new information and can automatically download it, if that function is enabled. The reader also provides a user interface.
+
+**Example**
+
+RSS files are essentially XML formatted plain text. The RSS file itself is relatively easy to read both by automated processes and by humans alike. An example file could have contents such as the following. This could be placed on any appropriate communication protocol for file retrieval, such as http or ftp, and reading software would use the information to present a neat display to the end users.
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>RSS Title</title>
+ <description>This is an example of an RSS feed</description>
+ <link>http://www.someexamplerssdomain.com/main.html</link>
+ <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>
+ <pubDate>Mon, 06 Sep 2009 16:20:00 +0000 </pubDate>
+ <ttl>1800</ttl>
+ 
+ <item>
+  <title>Example entry</title>
+  <description>Here is some text containing an interesting description.</description>
+  <link>http://www.wikipedia.org/</link>
+  <guid>unique string per item</guid>
+  <pubDate>Mon, 06 Sep 2009 16:20:00 +0000 </pubDate>
+ </item>
+ 
+</channel>
+</rss>
+```
+
+For the purpose of this project, we use this url as our data provider `http://detik.feedsportal.com/c/33613/f/656098/index.rss`.
+
+## Layouting User Interface and Components
+
+Next we create a new layout for news reader function. Create new XML file for layout like in our previous tutorial. This is the layout that will show up if we click News Reader menu.
+
+<img src="http://imageshack.com/a/img843/6695/l2ep.jpg" alt="UI and Components" />
+
+We use ListView in our News Reader app. This is a component for viewing list of item, with it's title and it's short description. It's a suitable component for viewing our rss data. Rss data provided by our website that we requested always have title and short description data. This data that we use and we showing in our app. Drag ListView into graphical layout to use a ListView. Change it's id with easier name to remember if you want to.
+
+<img src="http://imageshack.com/a/img836/5318/85rd.png" alt="Row Layout" />
+
+ListView is just an container for our real data. As a placeholder of our rss data we create another layout. This layout just contain one LargeText for title of our rss data and TextView for short description of our rss data.
 
 ## Add News Reader option in Menu Bar
 
@@ -26,146 +77,167 @@ We put our new function (News Reader) by creating a new layout for user interfac
 
 News reader menu will show up if we touch menu button on our android handset. We haven't yet create handler for this menu button.
 
-## Layouting User Interface and Components
+## News Activity Intent
 
-Next we create a new layout for news reader function. Create new XML file for layout like in our previous tutorial. This is the layout that will show up if we click News Reader menu.
+Create new Intent for our News Reader menu.
 
-<img src="http://imageshack.com/a/img843/6695/l2ep.jpg" alt="UI and Components" />
+What is Intent?
 
-We use ListView in our News Reader app. This is a component for viewing list of item, with it's title and it's short description. It's a suitable component for viewing our rss data. Rss data provided by our website that we requested always have title and short description data. This data that we use and we showing in our app. Drag ListView into graphical layout to use a ListView. Change it's id with easier name to remember if you want to.
+An intent is an abstract description of an operation to be performed. An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed.
 
-## API
+For this purpose, we use Intent to launch our `NewsActivity` class from our `MainActivity` class.
 
-* Explain API
-  * Login
-  * News list
-  * News content
-* Test on Postman
+```
+		// News Reader
+		case R.id.action_news:
+			Intent intent2 = new Intent(getApplicationContext(), NewsActivity.class);
+			startActivity(intent2);
+			break;
+		}
+```
 
-## UI and components
+<img src="http://imageshack.com/a/img835/2391/7pur.png" alt="News Reader Intent" />
 
-* Explain UI flow
-  * Login
-  * News list
-  * News content
+After create new Intent, we must register `NewsActivity` in our `AndroidManifest` xml file. If we not register this activity in our `AndroidManifest` file, our activity will not run, it will give an exception error.
 
-* Explain components
-  * SQLite
-  * Preferences
-  * HTTP Post request
+```
+	<activity
+	android:name="com.aegis.converter.NewsActivity"
+	android:label="@string/rss_reader" >
+	</activity>
+```
 
-## Create Android App
+<img src="http://imageshack.com/a/img843/6859/dg0o.png" alt="News Activity in AndroidManifest xml file" />
 
-* Explained in [helloworld](helloworld.md)
+## News Activity
 
-## Create login activity
+Next step is we create a code that grap our data from the website and show this data to user. Create a new class for our News Reader Activity, named this class `NewsActivity`.
 
-* File -> New -> Other -> Android Activity
-* Blank Activity. Next.
-* Set activity name: LoginActivity. Next.
-* See what changes to be performed. Finish
+```
+public class NewsActivity extends Activity {
 
-## Edit login layout
+	ListView list = null;
 
-* res/layout/activity_login.xml
-* Add View
-  * TextView 
-  * Edit Text for username
-  * Edit Text for password
-  * Button
-* Set id and text for each view
-* Add onClick handler for button
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+		setContentView(R.layout.activity_news);
 
-## Edit LoginActivity class
+		list = (ListView) findViewById(R.id.listView1);
+		list.setOnItemClickListener(new OnItemClickListener() {
 
-* add onClick handler
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				RssItem item = (RssItem) list.getItemAtPosition(position);
+				Log.v("Item", "onClick : " + item.getTitle());
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getLink()));
+				startActivity(intent);
+			}
+		});
 
-  ```
-    public void loginButtonClicked(View view) {
-      // TODO 
-      // use findViewById() to get username and password text
-      
-      // Check connection
-      // If OK, do login in background. Why?
-    }
-  ```
+		String url = "http://detik.feedsportal.com/c/33613/f/656098/index.rss";
+		new DownloadRssData().execute(url);
 
-* Create Login AsyncTask
+	}
 
-  ```
-    private class LoginConnection extends AsyncTask<String, Void, String> {
-      
-      // This runs in other thread
-      @Override
-      protected String doInBackground(String... params) {
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.news, menu);
+		return true;
+	}
 
-        try {
-          // TODO 
-          // Login code here
-        } catch (IOException e) {
-          return "Unable to retrieve web page. URL may be invalid.";
-        }
-      }
+	public class DownloadRssData extends AsyncTask<String, Void, ArrayList<RssItem>> {
 
-      // This runs in UI thread
-      @Override
-      protected void onPostExecute(String result) {
-        // TODO
-        // Parse JSON here
-        // Store Login data in SharedPreferences
-      }
-    }
-  ```
+		// fungsi dengan parameter, string... data berupa array
+		@Override
+		protected ArrayList<RssItem> doInBackground(String... params) {
+			// TODO Auto-generated method stub
 
-* HTTP POST. Remember HTTP GET
+			ArrayList<RssItem> rssItems = new ArrayList<RssItem>();
 
-  ```
-  ...
-    // Create JSON string from login data
-    JSONObject loginData = new JSONObject();
-    loginData.put("name", name);
-    loginData.put("pass", password);
-    Log.d(TAG, "The body is: " + loginData.toString());
-    
-    // Open connection
-    URL urlConn = new URL(url);
-    HttpURLConnection conn = (HttpURLConnection) urlConn.openConnection();
-    
-    // Set header
-    conn.setRequestProperty("Content-Type", "application/json");
-    conn.setRequestMethod("POST");
-    conn.connect();
-    
-    // Add POST body
-    byte[] outputBytes = loginData.toString().getBytes("UTF-8");
-    OutputStream os = conn.getOutputStream();
-    os.write(outputBytes);
-    os.close();
-    
-    // Get response
-    int response = conn.getResponseCode();
-    Log.d(TAG, "The response is: " + response);
-    
-    // Get data
-    is = conn.getInputStream();
-  ...
-  ```
+			try{
+				URL url = new URL (params[0]);
+				RssFeed feed = RssReader.read(url);
+				rssItems = feed.getRssItems();
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
 
-* Then what? Any idea?
-* Explain
-  * Android navigation
-  * Use `finish()` to remove Activity from stack
-* Question
-  * Why we are not using login activity as main in manifest?
-* Tasks
-  * Store login information into SharedPreferences
-  * Check if user is logged in MainActivity class. If not, open LoginActivity using intent
+			return rssItems;
+		}
 
-  ```
-    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-    startActivity(i);
-    finish();
-  ```
+		protected void onPreExecute(){
+			setProgressBarIndeterminateVisibility(true);
+		}
+
+		protected void onPostExecute(ArrayList<RssItem> result) {
+			for(RssItem rssItem:result){
+				Log.i("RSS Reader", rssItem.getTitle());
+			}
+
+			RssArrayAdapter adapter = new RssArrayAdapter(
+					getBaseContext(), R.layout.row_layout, result);
+
+			//set adapter to listview
+			list.setAdapter(adapter);
+
+		}
+	}
+}
+``` 
+
+## RSS Array Adapter
+
+Create new class for RSS Array Adapter.
+
+What is an Adapter?
+
+An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. The Adapter provides access to the data items. The Adapter is also responsible for making a View for each item in the data set.
+
+This adapter act as a bridge that access the rss data from the internet and show that data to the view that have created.
+
+```
+public class RssArrayAdapter extends ArrayAdapter<RssItem> {
+
+	public RssArrayAdapter(Context context, int textViewResourceId,
+			List<RssItem> objects) {
+		super(context, textViewResourceId, objects);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		
+		  // Get the data item for this position
+	    RssItem news = getItem(position);    
+
+	    // Check if an existing view is being reused, otherwise inflate the view
+	    if (convertView == null) {
+	      convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_layout, null);
+	    }
+
+	    // Lookup view for data population
+	    TextView rowTitle = (TextView) convertView.findViewById(R.id.itemTitle);
+	    TextView rowDate = (TextView) convertView.findViewById(R.id.itemDescription);
+
+	    // Populate the data into the template view using the data object
+	    rowTitle.setText(news.getTitle());
+	    rowDate.setText(news.getPubDate().toString());
+
+	    // Return the completed view to render on screen
+	    return convertView;
+	 
+	}
+}
+```
+
+<img src="http://imageshack.com/a/img845/6603/y5jl.png" alt="News Reader" />
 
 # News Reader phase 2
 
@@ -265,58 +337,6 @@ We use ListView in our News Reader app. This is a component for viewing list of 
     setProgressBarIndeterminateVisibility(Boolean.FALSE); 
   ```
 
-## SQLite
-
-* Explain
-  * SQLite database
-  * Basic SQL command
-  * Show basic command using SQLite GUI
-
-  ```
-    // create table
-    CREATE TABLE news (id TEXT PRIMARY KEY, title TEXT, content TEXT)
-    
-    // insert into table
-    INSERT INTO news VALUES('1', 'Title 1', 'Content 1')
-    INSERT INTO news VALUES('2', 'Title 2', 'Content 2');
-    
-    // get from table
-    SELECT * FROM news
-
-    // update data in table
-    UPDATE news SET content='Updated content 2' where id='2'
-
-    // delete data from table
-    DELETE FROM news WHERE id='2'
-  ```
-
-* Create NewsItem class
-  * Why?
-* Create SQLiteOpenHelper derived class
-  * What is SQLiteOpenHelper and SQLiteDatabase
-
-### Store news to database
-
-* The the code after getting JSON. Where is it?
-
-  ```
-    JSONArray newsList = reader.getJSONArray("data");
-
-    db = dbHelper.getWritableDatabase();
-    
-    for (int i = 0; i < newsList.length(); i++) {
-      JSONObject c = newsList.getJSONObject(i);
-      
-      // TODO 
-      // Complete the statement
-
-      NewsItem item = new NewsItem(c.getString("_id") ... );
-      dbHelper.addNews(db, item);
-    }
-    
-    db.close();
-  ```
-
 ## Show news list
 
 ### Add list view
@@ -356,8 +376,6 @@ We use ListView in our News Reader app. This is a component for viewing list of 
   * What is problem with NewsArrayAdapter?
 
 ### Cursor Adapter
-
-
 
 # News Reader phase 3
 

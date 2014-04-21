@@ -1,5 +1,38 @@
+###### DevAcademy Android Bootcamp Notes
 
-# News Reader phase 1
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+# App Project - News Reader
+
+For this project we will learn few new concept. Using API on android library, using intent to fire a new action and many other things. We have learn a basic concept how to build an application for android in our previous lesson, using Currency Converter as a project. For now we will learn through more deeply into an android development world. By building News Reader app, we hope we can master a new concept: intent, listView, API and a few other things. This app is a simple version of RSS reader in android environment. Just like fetching information on our currency converter app, this app also using internet connection and sending a request of rss in one of rss feeder service. After this rss data available and then we show this data in our list view layout that we have prepared before.
+
+We put our new function (News Reader) by creating a new layout for user interface and a new class for the actual code to handle this new function. Just like our previous app we create new menu and if user choose this menu it will triggering new layout with a list of news we grab from rss feeder service. This rss feeder website provide us with the actual data of news information on it's website.
+
+## Add News Reader option in Menu Bar
+
+* Open `main.xml` file located in `Converter -> res -> menu` on Package Explorer.
+* Click Add to create new menu element.
+* Fill the attribute for this news reader menu.
+
+<img src="http://imageshack.com/a/img836/7859/jdk5.png" alt="Create News Reader Menu" />
+
+<img src="http://imageshack.com/a/img834/9064/w09g.png" alt="News Reader Menu" />
+
+News reader menu will show up if we touch menu button on our android handset. We haven't yet create handler for this menu button.
+
+## Layouting User Interface and Components
+
+Next we create a new layout for news reader function. Create new XML file for layout like in our previous tutorial. This is the layout that will show up if we click News Reader menu.
+
+<img src="http://imageshack.com/a/img843/6695/l2ep.jpg" alt="UI and Components" />
+
+We use ListView in our News Reader app. This is a component for viewing list of item, with it's title and it's short description. It's a suitable component for viewing our rss data. Rss data provided by our website that we requested always have title and short description data. This data that we use and we showing in our app. Drag ListView into graphical layout to use a ListView. Change it's id with easier name to remember if you want to.
 
 ## API
 
